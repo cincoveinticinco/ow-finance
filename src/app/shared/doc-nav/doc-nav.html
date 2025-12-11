@@ -1,0 +1,11 @@
+<mat-nav-list>
+  @for (menu of docMenuList; track menu.link) {
+    <a
+      mat-list-item
+      routerLink="{{menu.link}}"
+      (click)="$event.preventDefault(); activeLink=menu.link;"
+      [activated]="activeLink === menu.link"
+      >{{menu.title | titlecase}}</a
+    >
+  }
+</mat-nav-list>

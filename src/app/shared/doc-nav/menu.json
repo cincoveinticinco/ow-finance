@@ -1,0 +1,54 @@
+[
+    {
+        "title": "Text input",
+        "link": "/docs/text-input"
+    },
+    {
+        "title": "Text area",
+        "link": "/docs/textarea"
+    },
+    {
+        "title": "Mail input",
+        "link": "/docs/mail-input"
+    },
+    {
+        "title": "Select input",
+        "link": "/docs/select-input"
+    },
+    {
+        "title": "Date input",
+        "link": "/docs/date-input"
+    },
+    {
+        "title": "Number input",
+        "link": "/docs/number-input"
+    },
+    {
+        "title": "Address input",
+        "link": "/docs/address-input"
+    },
+    {
+        "title": "Phone input",
+        "link": "/docs/phone-input"
+    },
+    {
+        "title": "File input",
+        "link": "/docs/file-input"
+    },
+    {
+        "title": "Radio input",
+        "link": "/docs/radio-input"
+    },
+    {
+        "title": "Check input",
+        "link": "/docs/check-input"
+    },
+    {
+        "title": "Signature input",
+        "link": "/docs/signature-input"
+    },
+    {
+        "title": "Payment input",
+        "link": "/docs/payment-input"
+    }
+]
