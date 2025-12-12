@@ -1,0 +1,41 @@
+[
+    {
+        "property": "Label",
+        "description": "The text label associated with the phone field."
+    },
+    {
+        "property": "Placeholder",
+        "description": "The placeholder text displayed inside the phone field when it is empty."
+    },
+    {
+        "property": "Helping text",
+        "description": "Additional text that provides guidance or information about the phone field."
+    },
+    {
+        "property": "Required",
+        "description": "If is cheked, the phone field must be filled out before submitting the form."
+    },
+    {
+        "property": "Show country code selector",
+        "description": "If is checked, a dropdown to select the country code will be displayed."
+    },
+    {
+        "property": "Format mask",
+        "description": "Defines the input mask for the phone number format. By default, it is set to (999) 999-9999."
+    },
+    {
+        "property": "Valid country codes",
+        "description": "A group of country codes that are considered valid for the phone input.",
+        "options": [
+            {
+                "option": "Colombia (+57)"
+            },
+            {
+                "option": "Mexico (+52)"
+            },
+            {
+                "option": "United States (+1)"
+            }
+        ]
+    }
+]

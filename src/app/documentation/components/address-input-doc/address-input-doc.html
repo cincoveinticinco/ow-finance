@@ -1,1 +1,20 @@
-<p>address-input-doc works!</p>
+<p-fluid class="card flex flex-wrap gap-4 w-10">
+    <div class="flex flex-column gap-2 w-6">
+        <label for="address">Address input</label>
+        <input pInputText id="address" aria-describedby="username-help" />
+    </div>
+
+    <div class="flex flex-column gap-2 w-2">
+        <label for="country">Country</label>
+        <p-select [options]="countries" optionLabel="name" placeholder="Select a country" class="w-full md:w-56" />
+    </div>
+
+    <div class="flex flex-column gap-2 w-2">
+        <label for="city">City</label>
+        <p-select [options]="cities" optionLabel="name" placeholder="Select a City" class="w-full md:w-56" />
+    </div>
+</p-fluid>
+
+<app-doc-information
+    [config]="config"
+></app-doc-information>

@@ -1,0 +1,45 @@
+[
+    {
+        "property": "Label",
+        "description": "The text label associated with the file field."
+    },
+    {
+        "property": "Description",
+        "description": "Additional text that provides guidance or information about the file field."
+    },
+    {
+        "property": "Required",
+        "description": "If is cheked, the file field must be filled out before submitting the form."
+    },
+    {
+        "property": "Multiple files",
+        "description": "If is checked, allows the selection of multiple files."
+    },
+    {
+        "property": "Acceptable file types",
+        "description": "Specifies the types of files that the file input should accept.",
+        "options": [
+            {
+                "option": ".jpg,.jpeg"
+            },
+            {
+                "option": ".png"
+            },
+            {
+                "option": ".pdf"
+            },
+            {
+                "option": ".csv"
+            },
+            {
+                "option": ".xlsx, .xls, .xml"
+            },
+            {
+                "option": ".doc,.docx"
+            },
+            {
+                "option": ".zip"
+            }
+        ]
+    }
+]

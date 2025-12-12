@@ -38,3 +38,24 @@ body {
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.flag {
+  background: url("https://primefaces.org/cdn/primeng/images/flag/flags_responsive.png") no-repeat;
+  background-size: 100%;
+  vertical-align: middle;
+  display: inline-block;
+  width: 1.33rem;  /* default width */
+  height: 1rem;   /* default height */
+}
+
+.flag-us {
+  background-position: 0 93.38843%;
+}
+
+.flag-mx {
+  background-position: 0 61.570248%;
+}
+
+.flag-co {
+  background-position: 0 19.421488%;
+}

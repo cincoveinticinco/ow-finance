@@ -1,1 +1,23 @@
-<p>mail-input-doc works!</p>
+<div class="card flex justify-center">
+    <form [formGroup]="form" class="w-4">
+        <div class="flex flex-column gap-2">
+            <label for="email">Email</label>
+            <input pInputText id="email" formControlName="email" aria-describedby="email-help" [invalid]="email.invalid && email.touched" />
+            <!-- <small id="username-help">Enter your username to reset your password.</small> -->
+             @if (email.invalid && email.touched) {
+                <p-message severity="error" size="small" variant="simple">
+                    @if (email.hasError('required')) {
+                        Email is Required.
+                    }
+                    @if (email.hasError('pattern')) {
+                        Please enter a valid email.
+                    }
+                </p-message>
+            }
+        </div>
+    </form>
+</div>
+
+<app-doc-information
+    [config]="config"
+></app-doc-information>

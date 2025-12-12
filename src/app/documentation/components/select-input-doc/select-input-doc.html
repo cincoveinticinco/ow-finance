@@ -1,1 +1,11 @@
-<p>select-input-doc works!</p>
+<div class="card flex justify-center">
+    <div class="flex flex-column w-4">
+        <label for="username">Cities</label>
+        <p-multiselect [options]="cities" optionLabel="name" placeholder="Select Cities" [maxSelectedLabels]="3" class="w-full md:w-80" />
+        <!-- <small id="username-help">Description here.</small> -->
+    </div>
+</div>
+
+<app-doc-information
+    [config]="config"
+></app-doc-information>

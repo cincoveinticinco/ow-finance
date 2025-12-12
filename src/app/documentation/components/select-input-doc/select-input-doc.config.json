@@ -1,0 +1,57 @@
+[
+    {
+        "property": "Label",
+        "description": "The text label associated with the select input."
+    },
+    {
+        "property": "Placeholder",
+        "description": "The placeholder text displayed inside the select field when it is empty."
+    },
+    {
+        "property": "Helping text",
+        "description": "Additional text that provides guidance or information about the select field."
+    },
+    {
+        "property": "Required",
+        "description": "If is cheked, the select field must be filled out before submitting the form."
+    },
+    {
+        "property": "Multiple",
+        "description": "If is cheked, allows the selection of multiple options in the select field."
+    },
+    {
+        "property": "Options",
+        "description": "A group of options to be displayed in the select field."
+    },
+    {
+        "property": "Searchable",
+        "description": "If is cheked, enables a search functionality within the select field to filter options."
+    },
+    {
+        "property": "Clearable",
+        "description": "If is cheked, allows the user to clear the selected option(s) in the select field."
+    },
+    {
+        "property": "Dependent behavior",
+        "description": "Defines how the select field behaves based on the value of another field.",
+        "options": [
+            {
+                "option": "Hide"
+            },
+            {
+                "option": "Disable"
+            },
+            {
+                "option": "Require"
+            }
+        ]
+    },
+    {
+        "property": "Dependent field",
+        "description": "Specifies the field that the select field depends on for its disabled state."
+    },
+    {
+        "property": "Dependent value",
+        "description": "Specifies the value of the dependent field that will disable the select field."
+    }
+]

@@ -8,7 +8,7 @@
         "description": "The placeholder text displayed inside the input field when it is empty."
     },
     {
-        "property": "Help text",
+        "property": "Helping text",
         "description": "Additional text that provides guidance or information about the input field."
     },
     {
@@ -22,6 +22,29 @@
     {
         "property": "Min Length",
         "description": "Specifies the minimum number of characters required in the input field."
+    },
+    {
+        "property": "Dependent behavior",
+        "description": "Defines how the input field behaves based on the value of another field.",
+        "options": [
+            {
+                "option": "Hide"
+            },
+            {
+                "option": "Disable"
+            },
+            {
+                "option": "Require"
+            }
+        ]
+    },
+    {
+        "property": "Dependent field",
+        "description": "Specifies the field that the select field depends on for its disabled state."
+    },
+    {
+        "property": "Dependent value",
+        "description": "Specifies the value of the dependent field that will disable the select field."
     },
     {
         "property": "Type",
