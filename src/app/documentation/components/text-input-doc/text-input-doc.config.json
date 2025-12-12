@@ -1,0 +1,44 @@
+[
+    {
+        "property": "Label",
+        "description": "The text label associated with the input field."
+    },
+    {
+        "property": "Placeholder",
+        "description": "The placeholder text displayed inside the input field when it is empty."
+    },
+    {
+        "property": "Help text",
+        "description": "Additional text that provides guidance or information about the input field."
+    },
+    {
+        "property": "Required",
+        "description": "If is cheked, the input field must be filled out before submitting the form."
+    },
+    {
+        "property": "Max Length",
+        "description": "Specifies the maximum number of characters allowed in the input field."
+    },
+    {
+        "property": "Min Length",
+        "description": "Specifies the minimum number of characters required in the input field."
+    },
+    {
+        "property": "Type",
+        "description": "Defines the type of input",
+        "options": [
+            {
+                "option": "Text",
+                "description": "Input field that accepts textual data."
+            },
+            {
+                "option": "Number",
+                "description": "Input field that accepts only numeric values."
+            },
+            {
+                "option": "Text and number",
+                "description": "Input field that accepts text and numeric values."
+            }
+        ]
+    }
+]
