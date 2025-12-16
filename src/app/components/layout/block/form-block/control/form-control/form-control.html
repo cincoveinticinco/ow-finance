@@ -1,6 +1,6 @@
-<div [formGroup]="form" class="row" id="{{control.name}}">
+<div [formGroup]="form" class="formgrid grid" id="{{control.name}}">
     @for(control of config.controls; track control.name) {
-        <div id="{{control?.idName || control.name}}" class="{{control?.classes || 'col-12'}}">
+        <div id="{{control?.idName || control.name}}" class="field {{control?.classes || 'col-12'}}">
             <app-control-block [control]="control"></app-control-block>
         </div>
     }

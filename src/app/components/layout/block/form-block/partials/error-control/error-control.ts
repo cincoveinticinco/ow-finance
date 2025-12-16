@@ -34,11 +34,10 @@ export class ErrorControl implements OnInit, OnDestroy {
   private listeningErrors(): void {
     this.ref.statusChanges.pipe(
       takeUntil(this.destroy),
-      debounceTime(400)
     ).subscribe((status: string) => {
       const ERROR_KEY = Object.keys(this.ref.errors || {})[0];
       if (status === 'INVALID') {
-        this.errorMessage = this.control?.config_messages?.[ERROR_KEY] || 'ERROR';
+        this.errorMessage = this.control?.config_messages?.[ERROR_KEY] || 'Error';
       } else {
         this.errorMessage = '';
       }

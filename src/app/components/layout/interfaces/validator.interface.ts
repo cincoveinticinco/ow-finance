@@ -1,6 +1,6 @@
 import { ValidatorFn } from "@angular/forms";
 
-export type ValidatorParam = number | string | number[] | string[];
+export type ValidatorParam = number | string | number[] | string[] | RegExp;
 
 export interface IValidator {
     validator_type?: string;
