@@ -9,5 +9,6 @@ import { Component, Input } from '@angular/core';
 export class Label {
 
   @Input() config: any;
+  @Input() control: any;
 
 }

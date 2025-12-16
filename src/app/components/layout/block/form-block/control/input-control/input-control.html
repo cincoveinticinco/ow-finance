@@ -1,6 +1,8 @@
 <div [formGroup]="form" class="form-group">
-    <app-label [config]="config"></app-label>
-    <input pInputText id="username" aria-describedby="username-help" />
-    <app-error-control [config]="config"></app-error-control>
-    <!-- <small id="username-help">Enter your username to reset your password.</small> -->
+    <app-label labelBehavior [control]="control" [config]="config"></app-label>
+    <input pInputText id="username" [formControlName]="control.name!" [type]="config.type!" [placeholder]="config.placeholder!" />
+    <app-error-control [control]="control"></app-error-control>
+    @if (config.helpText && formContext.valid) {
+        <small id="username-help">{{ config.helpText }}</small>
+    }
 </div>

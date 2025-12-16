@@ -21,7 +21,7 @@ export const ExampleLayout: ILayout = {
                     config: {
                         controls: [
                             {
-                                name: 'complete_name',
+                                name: 'full_name',
                                 type: 'input',
                                 classes: 'w-3',
                                 validators: [{
@@ -31,7 +31,11 @@ export const ExampleLayout: ILayout = {
                                 config: {
                                     type: 'text',
                                     label: 'Test text',
-                                    placeholder: 'Text'
+                                    placeholder: 'Text',
+                                    helpText: 'This is a test field'
+                                },
+                                config_messages: {
+                                    'required': 'This field is required'
                                 },
                                 value: 'Test'
                             }

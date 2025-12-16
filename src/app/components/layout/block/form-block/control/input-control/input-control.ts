@@ -7,10 +7,11 @@ import { FormService } from '../../../../service/form.service';
 import { InputText } from 'primeng/inputtext';
 import { Label } from '../../partials/label/label';
 import { ErrorControl } from '../../partials/error-control/error-control';
+import { LabelBehaviorDirective } from '../../../../../../directives/label-behavior.directive';
 
 @Component({
   selector: 'app-input-control',
-  imports: [InputText, Label, ErrorControl, ReactiveFormsModule],
+  imports: [InputText, Label, ErrorControl, ReactiveFormsModule, LabelBehaviorDirective],
   templateUrl: './input-control.html',
   styleUrl: './input-control.scss',
 })
@@ -27,7 +28,6 @@ export class InputControl extends ControlBlockComponentBase implements IControlC
   }
 
   load(control: IControl): void {
-      console.log(control)
       this.add(control);
   }
 
