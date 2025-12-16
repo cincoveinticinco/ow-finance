@@ -1,0 +1,7 @@
+<div [formGroup]="form" class="row" id="{{control.name}}">
+    @for(control of config.controls; track control.name) {
+        <div id="{{control?.idName || control.name}}" class="{{control?.classes || 'col-12'}}">
+            <app-control-block [control]="control"></app-control-block>
+        </div>
+    }
+</div>

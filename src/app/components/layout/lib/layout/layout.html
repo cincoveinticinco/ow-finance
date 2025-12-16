@@ -1,0 +1,12 @@
+@if (load) {
+    <form novalidate [formGroup]="form" class="core-layout">
+        <div class="row">
+            @for(block of layout.blocks; track block.key) {
+                <div id="{{block?.id || block.key}}" class="{{block?.classes || 'col-12'}}">
+                    <app-block [block]="block"></app-block>
+                </div>
+            }
+        </div>
+    </form>
+
+}
