@@ -6,6 +6,14 @@ export const DocumentationRoutes: Routes = [
         loadComponent: () => import('./documentation').then(c => c.Documentation),
         children: [
             {
+                path: 'block',
+                loadComponent: () => import('./components/block-doc/block-doc').then(c => c.BlockDoc)
+            },
+            {
+                path: 'control',
+                loadComponent: () => import('./components/control-doc/control-doc').then(c => c.ControlDoc)
+            },
+            {
                 path: 'text-input',
                 loadComponent: () => import('./components/text-input-doc/text-input-doc').then(c => c.TextInputDoc)
             },

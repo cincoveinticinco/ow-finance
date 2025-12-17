@@ -1,66 +1,27 @@
 [
     {
-        "property": "Label",
+        "property": "label",
         "description": "The text label associated with the input field."
     },
     {
-        "property": "Placeholder",
+        "property": "placeholder",
         "description": "The placeholder text displayed inside the input field when it is empty."
     },
     {
-        "property": "Helping text",
+        "property": "helpText",
         "description": "Additional text that provides guidance or information about the input field."
     },
     {
-        "property": "Required",
-        "description": "If is cheked, the input field must be filled out before submitting the form."
-    },
-    {
-        "property": "Max Length",
-        "description": "Specifies the maximum number of characters allowed in the input field."
-    },
-    {
-        "property": "Min Length",
-        "description": "Specifies the minimum number of characters required in the input field."
-    },
-    {
-        "property": "Dependent behavior",
-        "description": "Defines how the input field behaves based on the value of another field.",
-        "options": [
-            {
-                "option": "Hide"
-            },
-            {
-                "option": "Disable"
-            },
-            {
-                "option": "Require"
-            }
-        ]
-    },
-    {
-        "property": "Dependent field",
-        "description": "Specifies the field that the select field depends on for its disabled state."
-    },
-    {
-        "property": "Dependent value",
-        "description": "Specifies the value of the dependent field that will disable the select field."
-    },
-    {
-        "property": "Type",
+        "property": "type",
         "description": "Defines the type of input",
         "options": [
             {
-                "option": "Text",
+                "option": "text",
                 "description": "Input field that accepts textual data."
             },
             {
-                "option": "Number",
+                "option": "number",
                 "description": "Input field that accepts only numeric values."
-            },
-            {
-                "option": "Text and number",
-                "description": "Input field that accepts text and numeric values."
             }
         ]
     }

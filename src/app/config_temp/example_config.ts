@@ -39,7 +39,7 @@ export const ExampleLayout: ILayout = {
                                     },
                                     {
                                         validator_type: 'maxlength',
-                                        params: [30]
+                                        params: [10]
                                     },
                                     {
                                         validator_type: 'minlength',
@@ -146,7 +146,6 @@ export const ExampleLayout: ILayout = {
                     }
                 },
             }
-            
         },
         {
             key: 'provider-data-title',

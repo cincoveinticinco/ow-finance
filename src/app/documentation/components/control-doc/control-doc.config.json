@@ -1,0 +1,40 @@
+[
+    {
+        "property": "name",
+        "description": "The name linked to the control."
+    },
+    {
+        "property": "type",
+        "description": "The type of control being defined.",
+        "options": [
+            {
+                "option": "input"
+            }
+        ]
+    },
+    {
+        "property": "classes",
+        "description": "Additional CSS classes to apply to the control."
+    },
+    {
+        "property": "validators",
+        "description": "Validation rules applied to the control.",
+        "options": [
+            {
+                "option": "required"
+            }
+        ]
+    },
+    {
+        "property": "disabled",
+        "description": "Whether the control is disabled."
+    },
+    {
+        "property": "config",
+        "description": "Configuration settings specific to the control type."
+    },
+    {
+        "property": "value",
+        "description": "The default value of the control."
+    }
+]

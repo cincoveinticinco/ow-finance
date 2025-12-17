@@ -1,5 +1,13 @@
 [
     {
+        "label": "Block",
+        "routerLink": "/docs/block"
+    },
+    {
+        "label": "Control",
+        "routerLink": "/docs/control"
+    },
+    {
         "label": "Text input",
         "routerLink": "/docs/text-input"
     },
