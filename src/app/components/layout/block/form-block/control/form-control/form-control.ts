@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ControlContainer, ReactiveFormsModule } from '@angular/forms';
+import { AbstractControl, ControlContainer, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { IControl } from '../../../../interfaces/control.interface';
 import { IFormControl } from './form-control.interface';
 import { FormService } from '../../../../service/form.service';
@@ -15,6 +15,7 @@ import { ControlBlock } from '../control-block/control-block';
 export class FormControlComponent extends ControlBlockComponentBase implements OnInit {
 
   declare config: IFormControl;
+  declare formContext: FormGroup;
 
   constructor(
     protected override controlContainer: ControlContainer,

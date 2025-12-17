@@ -5,6 +5,7 @@ import { Title } from '@angular/platform-browser';
 import { IBlock } from '../../interfaces/block.interface';
 import { timer } from 'rxjs';
 import { Block } from '../block/block';
+import { LayoutCoreService } from '../../service/layout-core.service';
 
 @Component({
   selector: 'app-layout',
@@ -19,16 +20,19 @@ export class LayoutComponent implements OnInit {
   public form: FormGroup = new FormGroup({});
 
   constructor(
-    // private layoutCoreService: LayoutCoreService,
+    private layoutCoreService: LayoutCoreService,
     private title: Title,
     private detectChanges: ChangeDetectorRef
   ) { }
 
   ngOnInit(): void {
     this.init();
-    // this.layoutCoreService.init();
-    // this.form = this.layoutCoreService.getForm();
+    this.layoutCoreService.init();
+    this.form = this.layoutCoreService.getForm();
+    // set it through a resolver when the layout comes in an endpoint
+    this.layoutCoreService.setLayout(this.layout);
     // this.layout = this.layoutCoreService.getLayout();
+    this.title.setTitle(this.layout.title || 'ONEWRAPP')
   }
 
   trackByItems(index: number, item: IBlock): string {

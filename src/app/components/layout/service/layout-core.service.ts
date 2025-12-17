@@ -35,7 +35,6 @@ export class LayoutCoreService {
 
   init(): void {
     this.form = this.fb.group({});
-    console.log(this.form);
   }
 
   setLayout(layout: ILayout): void {
@@ -52,6 +51,7 @@ export class LayoutCoreService {
   }
 
   getForm(): FormGroup {
+    console.log(this.form)
     return this.form;
   }
 

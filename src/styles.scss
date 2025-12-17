@@ -40,7 +40,13 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 :root {
+  --primary: #ad60e9;
   --invalid: #f44336;
+}
+
+h3 {
+  margin: 0;
+  font-weight: 500;
 }
 
 .flag {

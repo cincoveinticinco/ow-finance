@@ -37,8 +37,6 @@ export abstract class ControlBlockComponentBase implements OnDestroy {
         this.form = this.controlContainer.control as FormGroup;
         // this.form = this.controlContainer.control as FormArray;
         this.formContext = this.formService.addControl(this.form, control);
-        console.log('form ------ ', this.form);
-        console.log('formCOntext ------ ', this.formContext);
         this.isGroup = this.controlContainer.control!.constructor.name == FormGroup.name;
         if (this.config.actionSubscribe) {
             // call listen readonly

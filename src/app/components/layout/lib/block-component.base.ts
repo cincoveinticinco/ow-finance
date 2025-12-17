@@ -2,12 +2,11 @@ import { Component, Input, OnDestroy } from "@angular/core";
 import { IBlock } from "../interfaces/block.interface";
 import { IBlockConfig } from "../interfaces/block-component.interface";
 import { Subject } from "rxjs";
-import { IFormBlock } from "../block/form-block/form-block.interface";
 
 @Component({template: ''})
-export abstract class BlockComponentBase implements OnDestroy {
+export abstract class BlockComponentBase<TConfig> implements OnDestroy {
     @Input() block!: IBlock;
-    config!: IFormBlock;
+    config!: TConfig;
 
     destroy: Subject<boolean> = new Subject<boolean>();
 

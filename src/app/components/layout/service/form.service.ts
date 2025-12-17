@@ -26,7 +26,7 @@ export class FormService implements OnDestroy {
       this.destroy.unsubscribe;
   }
 
-public addControl(form: FormGroup | FormArray, control: IControl): AbstractControl {
+  public addControl(form: FormGroup | FormArray, control: IControl): AbstractControl {
     const validators = this.createValidator(control.validators!);
     let abstractControl: AbstractControl;
     switch(control.control_type) {

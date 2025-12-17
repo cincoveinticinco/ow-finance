@@ -12,7 +12,7 @@ import { FormControlComponent } from './control/form-control/form-control';
   templateUrl: './form-block.html',
   styleUrl: './form-block.scss',
 })
-export class FormBlock extends BlockComponentBase implements OnInit, IBlockComponent {
+export class FormBlock extends BlockComponentBase<IFormBlock> implements OnInit, IBlockComponent {
 
   parentForm!: FormGroup;
   ready = false;
