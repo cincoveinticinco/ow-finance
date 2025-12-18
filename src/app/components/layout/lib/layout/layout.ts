@@ -5,7 +5,7 @@ import { Title } from '@angular/platform-browser';
 import { IBlock } from '../../interfaces/block.interface';
 import { timer } from 'rxjs';
 import { Block } from '../block/block';
-import { LayoutCoreService } from '../../service/layout-core.service';
+import { LayoutCoreService } from '../../service/layout-core/layout-core.service';
 
 @Component({
   selector: 'app-layout',

@@ -3,7 +3,7 @@ import { IControl } from "../interfaces/control.interface";
 import { IControlConfig } from "../interfaces/control-component.interface";
 import { AbstractControl, ControlContainer, FormArray, FormGroup } from "@angular/forms";
 import { Subject } from "rxjs";
-import { FormService } from "../service/form.service";
+import { FormService } from "../service/form/form.service";
 
 @Component({ template: '' })
 export abstract class ControlBlockComponentBase implements OnDestroy {

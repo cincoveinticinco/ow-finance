@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { LayoutStorage } from './layout-storage';
+import { LayoutStorageService } from './layout-storage.service';
 
 describe('LayoutStorage', () => {
-  let service: LayoutStorage;
+  let service: LayoutStorageService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(LayoutStorage);
+    service = TestBed.inject(LayoutStorageService);
   });
 
   it('should be created', () => {

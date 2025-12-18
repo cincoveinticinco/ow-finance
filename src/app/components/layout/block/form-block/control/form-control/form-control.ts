@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControl, ControlContainer, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { IControl } from '../../../../interfaces/control.interface';
 import { IFormControl } from './form-control.interface';
-import { FormService } from '../../../../service/form.service';
+import { FormService } from '../../../../service/form/form.service';
 import { ControlBlockComponentBase } from '../../../../lib/control-block-component.base';
 import { ControlBlock } from '../control-block/control-block';
 

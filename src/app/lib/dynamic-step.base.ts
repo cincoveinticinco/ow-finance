@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, inject, OnInit, ViewChild } from "@angular/core";
 import { LayoutComponent } from "../components/layout/lib/layout/layout";
-import { LayoutCoreService } from "../components/layout/service/layout-core.service";
-import { LayoutStorageService } from "../components/layout/service/layout-storage.service";
+import { LayoutCoreService } from "../components/layout/service/layout-core/layout-core.service";
+import { LayoutStorageService } from "../components/layout/service/layout-storage/layout-storage.service";
 import { StepBase } from "./step.base";
 
 @Component({template: ''})

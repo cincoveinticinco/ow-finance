@@ -52,11 +52,6 @@ export const ExampleLayout: ILayout = {
                                     label: 'Full name',
                                     placeholder: 'Placeholder',
                                 },
-                                config_messages: {
-                                    required: 'This field is required',
-                                    maxlength: 'It must not exceed 10 characters.',
-                                    minlength: 'It must be at least 5 characters.',
-                                },
                                 value: null
                             },
                             {
@@ -84,7 +79,6 @@ export const ExampleLayout: ILayout = {
                                     helpText: 'Your age'
                                 },
                                 config_messages: {
-                                    required: 'Your age',
                                     min: 'You must have a legal age',
                                     max: "Age must not exceed 100."
                                 },

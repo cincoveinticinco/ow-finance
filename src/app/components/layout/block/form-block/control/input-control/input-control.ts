@@ -3,7 +3,7 @@ import { ControlBlockComponentBase } from '../../../../lib/control-block-compone
 import { IControlComponent } from '../../../../interfaces/control-component.interface';
 import { IControl } from '../../../../interfaces/control.interface';
 import { ControlContainer, ReactiveFormsModule } from '@angular/forms';
-import { FormService } from '../../../../service/form.service';
+import { FormService } from '../../../../service/form/form.service';
 import { InputText } from 'primeng/inputtext';
 import { Label } from '../../partials/label/label';
 import { ErrorControl } from '../../partials/error-control/error-control';

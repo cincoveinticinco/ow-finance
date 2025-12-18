@@ -1,7 +1,8 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, inject, Input, OnDestroy, OnInit } from '@angular/core';
 import { AbstractControl, ControlContainer, FormGroup } from '@angular/forms';
 import { Message } from 'primeng/message';
 import { debounceTime, Subject, takeUntil } from 'rxjs';
+import { FormErrorService } from '../../../../service/form-error/form-error.service';
 
 @Component({
   selector: 'app-error-control',
@@ -16,6 +17,7 @@ export class ErrorControl implements OnInit, OnDestroy {
 
   ref!: AbstractControl;
   errorMessage = '';
+  private formErrorService = inject(FormErrorService);
 
   constructor(
     private controlContainer: ControlContainer
@@ -37,7 +39,7 @@ export class ErrorControl implements OnInit, OnDestroy {
     ).subscribe((status: string) => {
       const ERROR_KEY = Object.keys(this.ref.errors || {})[0];
       if (status === 'INVALID') {
-        this.errorMessage = this.control?.config_messages?.[ERROR_KEY] || 'Error';
+        this.errorMessage = this.control?.config_messages?.[ERROR_KEY] || this.formErrorService.getError(this.ref);
       } else {
         this.errorMessage = '';
       }

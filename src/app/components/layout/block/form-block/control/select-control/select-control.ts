@@ -5,10 +5,10 @@ import { ErrorControl } from '../../partials/error-control/error-control';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { ControlBlockComponentBase } from '../../../../lib/control-block-component.base';
 import { IControlComponent } from '../../../../interfaces/control-component.interface';
-import { FormService } from '../../../../service/form.service';
+import { FormService } from '../../../../service/form/form.service';
 import { takeUntil } from 'rxjs';
 import { IControl } from '../../../../interfaces/control.interface';
-import { LayoutStorageService } from '../../../../service/layout-storage.service';
+import { LayoutStorageService } from '../../../../service/layout-storage/layout-storage.service';
 
 @Component({
   selector: 'app-select-control',

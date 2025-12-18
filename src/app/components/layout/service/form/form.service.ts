@@ -1,11 +1,11 @@
 import { Inject, Injectable, OnDestroy } from '@angular/core';
 import { AbstractControl, FormArray, FormBuilder, FormGroup, ValidatorFn } from '@angular/forms';
 import { Subject } from 'rxjs';
-import { IControl } from '../interfaces/control.interface';
-import { IValidator, ValidatorConfig } from '../interfaces/validator.interface';
-import { VALIDATOR_CONFIG_TOKEN } from '../config/validator.config';
-import { EffectConfig, IEffect } from '../interfaces/effect.interface';
-import { EFFECT_CONFIG_TOKEN } from '../config/effect.config';
+import { IControl } from '../../interfaces/control.interface';
+import { IValidator, ValidatorConfig } from '../../interfaces/validator.interface';
+import { VALIDATOR_CONFIG_TOKEN } from '../../config/validator.config';
+import { EffectConfig, IEffect } from '../../interfaces/effect.interface';
+import { EFFECT_CONFIG_TOKEN } from '../../config/effect.config';
 
 @Injectable({
   providedIn: 'root',

@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Optional, Output } from '@angular/core';
 import { ILayoutActionConfig } from '../../layout/interfaces/layout.interface';
-import { LayoutCoreService } from '../../layout/service/layout-core.service';
+import { LayoutCoreService } from '../../layout/service/layout-core/layout-core.service';
 import { isNil } from 'lodash';
 import { Button } from 'primeng/button';
 

@@ -1,12 +1,12 @@
 import { Inject, Injectable, Injector } from '@angular/core';
-import { ILayout } from '../interfaces/layout.interface';
+import { ILayout } from '../../interfaces/layout.interface';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Subject } from 'rxjs';
-import { IAction } from '../interfaces/action.interface';
-import { EffectConfig } from '../interfaces/effect.interface';
-import { LAYOUT_EFFECT_CONFIG_TOKEN } from '../config/effect.config';
-import { IBlock } from '../interfaces/block.interface';
-import { LayoutStorageService } from './layout-storage.service';
+import { IAction } from '../../interfaces/action.interface';
+import { EffectConfig } from '../../interfaces/effect.interface';
+import { LAYOUT_EFFECT_CONFIG_TOKEN } from '../../config/effect.config';
+import { IBlock } from '../../interfaces/block.interface';
+import { LayoutStorageService } from '../layout-storage/layout-storage.service';
 
 @Injectable({
   providedIn: 'root',
