@@ -1,6 +1,6 @@
 <div [formGroup]="form" class="form-group">
     <app-label labelBehavior [control]="control" [config]="config"></app-label>
-    <input pInputText id="username" [formControlName]="control.name!" [type]="config.type!" [placeholder]="config.placeholder!" />
+    <input pInputText [id]="control.name" [formControlName]="control.name!" [type]="config.type!" [placeholder]="config.placeholder!" />
     <app-error-control [control]="control"></app-error-control>
     @if (config.helpText && (formContext.valid || !formContext.dirty)) {
         <small>{{ config.helpText }}</small>

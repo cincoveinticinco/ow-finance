@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { ILabel } from './label.interface';
 
 @Component({
   selector: 'app-label',
@@ -8,7 +9,7 @@ import { Component, Input } from '@angular/core';
 })
 export class Label {
 
-  @Input() config: any;
+  @Input() config?: ILabel;
   @Input() control: any;
 
 }

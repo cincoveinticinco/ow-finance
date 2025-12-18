@@ -1,0 +1,7 @@
+<div [formGroup]="form">
+    <div [formArrayName]="control.name!" class="col-12">
+        @for (c of config.controls; track c.key) {
+            <app-form-control [control]="c"></app-form-control>
+        }
+    </div>
+</div>
