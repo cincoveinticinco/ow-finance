@@ -1,19 +1,20 @@
 import { TitleCasePipe } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { MatListModule } from '@angular/material/list';
-import MenuList from './menu.json';
-import { ActivatedRoute, Router, RouterLink } from "@angular/router";
-import { Menu, MenuModule } from 'primeng/menu';
-import { MenuItem } from 'primeng/api';
+import DocMenuList from './doc-menu.json';
+import { Router } from "@angular/router";
+import { TieredMenuModule } from 'primeng/tieredmenu';
+import { PanelMenuModule } from 'primeng/panelmenu';
+
 
 @Component({
   selector: 'app-doc-nav',
-  imports: [Menu, TitleCasePipe, RouterLink, MatListModule],
+  imports: [TieredMenuModule, PanelMenuModule, MatListModule],
   templateUrl: './doc-nav.html',
   styleUrl: './doc-nav.scss',
 })
 export class DocNav implements OnInit {
-    readonly docMenuList = MenuList;
+    readonly docMenuList = DocMenuList;
     activeLink: string | null = null;
 
     private router = inject(Router);

@@ -1,0 +1,70 @@
+[
+    {
+        "property": "key",
+        "description": "Specifies the unique key for the form group.",
+        "type": "string"
+    },
+    {
+        "property": "name",
+        "description": "Specifies the unique name for the form group.",
+        "type": "string"
+    },
+    {
+        "property": "type",
+        "description": "Specifies the control type.",
+        "type": "string",
+        "options": [
+            {
+                "option": "input"
+            },
+            {
+                "option": "array"
+            }
+        ]
+    },
+    {
+        "property": "control_type",
+        "description": "Specifies the control type.",
+        "type": "string",
+        "options": [
+            {
+                "option": "group",
+                "description": "Form group control type."
+            },
+            {
+                "option": "array",
+                "description": "Form array control type."
+            }
+        ]
+    },
+    {
+        "property": "classes",
+        "description": "Specifies the CSS classes to be applied to the form group.",
+        "type": "string"
+    },
+    {
+        "property": "disabled",
+        "description": "Specifies whether the form group is disabled.",
+        "type": "boolean"
+    },
+    {
+        "property": "config_messages",
+        "description": "Specifies the configuration for the error form control messages.",
+        "type": "any"
+    },
+    {
+        "property": "config",
+        "description": "Specifies the configuration for the form control.",
+        "type": "IFormControl  |  IInputControl  |  IArrayControl"
+    },
+    {
+        "property": "key_block",
+        "description": "Specifies the unique key of the inheritance block.",
+        "type": "string"
+    },
+    {
+        "property": "value",
+        "description": "Specifies the value of the control.",
+        "type": "string"
+    }
+]

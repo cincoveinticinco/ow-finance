@@ -1,4 +1,4 @@
 export interface ITitleBlock {
     value?: string;
-    hasSeparator?: string;
+    has_separator?: string;
 }

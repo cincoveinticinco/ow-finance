@@ -147,7 +147,7 @@ export const ExampleLayout: ILayout = {
             classes: 'text-lg px-2',
             config: {
                 value: 'Provider data',
-                hasSeparator: true
+                has_separator: true
             }
         },
         {
@@ -464,7 +464,7 @@ export const ExampleLayout: ILayout = {
             classes: 'text-lg px-2',
             config: {
                 value: 'Investors',
-                hasSeparator: true
+                has_separator: true
             }
         },
         {

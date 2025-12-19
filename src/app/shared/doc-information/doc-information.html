@@ -3,6 +3,7 @@
         <tr>
             <th>Property</th>
             <th>Description</th>
+            <th>Type</th>
             <th>Options</th>
         </tr>
     </ng-template>
@@ -10,6 +11,7 @@
         <tr>
             <td>{{ config.property }}</td>
             <td>{{ config.description }}</td>
+            <td>{{ config.type }}</td>
             <td>
                 @for (item of config.options; track $index) {
                     <p>

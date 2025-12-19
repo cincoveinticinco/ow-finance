@@ -1,11 +1,13 @@
 [
     {
         "property": "key",
-        "description": "The key associated with the block."
+        "description": "The key associated with the block.",
+        "type": "string"
     },
     {
         "property": "block_type",
         "description": "The type of block being defined.",
+        "type": "string",
         "options": [
             {
                 "option": "title",
@@ -19,10 +21,12 @@
     },
     {
         "property": "classes",
-        "description": "Additional CSS classes to apply to the block."
+        "description": "Additional CSS classes to apply to the block.",
+        "type": "string"
     },
     {
         "property": "config",
-        "description": "Configuration settings specific to the block type."
+        "description": "Configuration settings specific to the block type.",
+        "type": "ITitleBlock  |  IFormBlock"
     }
 ]

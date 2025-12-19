@@ -6,64 +6,46 @@ export const DocumentationRoutes: Routes = [
         loadComponent: () => import('./documentation').then(c => c.Documentation),
         children: [
             {
+                path: 'layout',
+                loadComponent: () => import('./components/layout-doc/layout-doc').then(c => c.LayoutDoc)
+            },
+            {
                 path: 'block',
                 loadComponent: () => import('./components/block-doc/block-doc').then(c => c.BlockDoc)
             },
             {
-                path: 'control',
-                loadComponent: () => import('./components/control-doc/control-doc').then(c => c.ControlDoc)
+                path: 'title-block-type',
+                loadComponent: () => import('./components/config-block-types-doc/title-block-type-doc/title-block-type-doc').then(c => c.TitleBlockTypeDoc)
+            },
+            {
+                path: 'form-block-type',
+                loadComponent: () => import('./components/config-block-types-doc/form-block-type-doc/form-block-type-doc').then(c => c.FormBlockTypeDoc),
+                children: [
+                    {
+                        path: 'form-control',
+                        loadComponent: () => import('./components/config-block-types-doc/form-block-type-doc/form-control-doc/form-control-doc').then(c => c.FormControlDoc),
+                    },
+                    {
+                        path: 'input-control',
+                        loadComponent: () => import('./components/config-block-types-doc/form-block-type-doc/input-control-doc/input-control-doc').then(c => c.InputControlDoc),
+                    },
+                    {
+                        path: 'array-control',
+                        loadComponent: () => import('./components/config-block-types-doc/form-block-type-doc/array-control-doc/array-control-doc').then(c => c.ArrayControlDoc),
+                    },
+                    {
+                        path: '**',
+                        redirectTo: 'input-control'
+                    }
+                ]
             },
             {
                 path: 'text-input',
                 loadComponent: () => import('./components/text-input-doc/text-input-doc').then(c => c.TextInputDoc)
             },
             {
-                path: 'textarea',
-                loadComponent: () => import('./components/textarea-doc/textarea-doc').then(c => c.TextareaDoc)
-            },
-            {
-                path: 'mail-input',
-                loadComponent: () => import('./components/mail-input-doc/mail-input-doc').then(c => c.MailInputDoc)
-            },
-            {
-                path: 'select-input',
-                loadComponent: () => import('./components/select-input-doc/select-input-doc').then(c => c.SelectInputDoc)
-            },
-            {
-                path: 'date-input',
-                loadComponent: () => import('./components/date-input-doc/date-input-doc').then(c => c.DateInputDoc)
-            },
-            {
-                path: 'number-input',
-                loadComponent: () => import('./components/number-input-doc/number-input-doc').then(c => c.NumberInputDoc)
-            },
-            {
-                path: 'address-input',
-                loadComponent: () => import('./components/address-input-doc/address-input-doc').then(c => c.AddressInputDoc)
-            },
-            {
-                path: 'phone-input',
-                loadComponent: () => import('./components/phone-input-doc/phone-input-doc').then(c => c.PhoneInputDoc)
-            },
-            {
-                path: 'file-input',
-                loadComponent: () => import('./components/file-input-doc/file-input-doc').then(c => c.FileInputDoc)
-            },
-            {
                 path: 'radio-input',
                 loadComponent: () => import('./components/radio-input-doc/radio-input-doc').then(c => c.RadioInputDoc)
-            },
-            {
-                path: 'check-input',
-                loadComponent: () => import('./components/check-input-doc/check-input-doc').then(c => c.CheckInputDoc)
-            },
-            {
-                path: 'signature-input',
-                loadComponent: () => import('./components/signature-input-doc/signature-input-doc').then(c => c.SignatureInputDoc)
-            },
-            {
-                path: 'payment-input',
-                loadComponent: () => import('./components/payment-input-doc/payment-input-doc').then(c => c.PaymentInputDoc)
             },
             {
                 path: '**',
