@@ -14,5 +14,6 @@ export interface IControl {
     config?: IControlConfig;
     value?: any;
     idName?: string;
-    key?: string;
+    key?: string | number;
+    key_block?: string;
 }

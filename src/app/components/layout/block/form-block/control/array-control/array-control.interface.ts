@@ -3,4 +3,11 @@ import { IControl } from "../../../../interfaces/control.interface";
 
 export interface IArrayControl extends IBaseControl {
     controls?: IControl[];
+    add_config?: IAddConfig;
+}
+
+export interface IAddConfig {
+    show_add?: boolean;
+    add_text?: string;
+    limit?: number;
 }
