@@ -6,7 +6,7 @@
     },
     {
         "property": "name",
-        "description": "Specifies the unique name for the form group.",
+        "description": "Specifies the unique name for the form group or input control.",
         "type": "string"
     },
     {
@@ -23,7 +23,7 @@
         ]
     },
     {
-        "property": "control_type",
+        "property": "form_type",
         "description": "Specifies the control type.",
         "type": "string",
         "options": [
@@ -58,9 +58,9 @@
         "type": "IFormControl  |  IInputControl  |  IArrayControl"
     },
     {
-        "property": "key_block",
-        "description": "Specifies the unique key of the inheritance block.",
-        "type": "string"
+        "property": "validators",
+        "description": "Specifies the validators for the form control.",
+        "type": "IValidator[]"
     },
     {
         "property": "value",

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SelectInputDoc } from './select-input-doc';
+import { ValidatorDoc } from './validator-doc';
 
-describe('SelectInputDoc', () => {
-  let component: SelectInputDoc;
-  let fixture: ComponentFixture<SelectInputDoc>;
+describe('ValidatorDoc', () => {
+  let component: ValidatorDoc;
+  let fixture: ComponentFixture<ValidatorDoc>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SelectInputDoc]
+      imports: [ValidatorDoc]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SelectInputDoc);
+    fixture = TestBed.createComponent(ValidatorDoc);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

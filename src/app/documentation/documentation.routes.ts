@@ -40,16 +40,16 @@ export const DocumentationRoutes: Routes = [
                 ]
             },
             {
-                path: 'text-input',
-                loadComponent: () => import('./components/text-input-doc/text-input-doc').then(c => c.TextInputDoc)
+                path: 'validator',
+                loadComponent: () => import('./components/validator-doc/validator-doc').then(c => c.ValidatorDoc)
             },
             {
-                path: 'radio-input',
-                loadComponent: () => import('./components/radio-input-doc/radio-input-doc').then(c => c.RadioInputDoc)
+                path: 'example',
+                loadComponent: () => import('./components/example-doc/example-doc').then(c => c.ExampleDoc)
             },
             {
                 path: '**',
-                redirectTo: 'text-input'
+                redirectTo: 'layout'
             }
         ]
     }

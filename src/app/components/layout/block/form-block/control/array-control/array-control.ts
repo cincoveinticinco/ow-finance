@@ -33,7 +33,6 @@ export class ArrayControl extends ControlBlockComponentBase implements IControlC
   }
   
   protected addControl() {
-    if (!this.control.key_block) throw {code: 'key-block-required', message: "Key block is required"}
     const controls = this.control.config?.['controls'];
     const lastControl = controls[controls.length - 1];
     if (controls.length === this.config.add_config?.limit) {

@@ -4,8 +4,12 @@
             @if(!isNull(c.name) && !isNull(c.key)) {
                 <div class="flex align-items-center mb-3">
                     <div class="mr-2 flex gap-2 align-items-center">
-                        <i class="pi pi-trash invalid cursor-pointer" (click)="deleteControl(c.key)"></i>
-                        <p class="font-semibold text-xl">{{ i + 1 }}</p>
+                        @if (config.add_config?.can_remove_first || i > 0) {
+                            <i class="pi pi-trash invalid cursor-pointer" (click)="deleteControl(c.key)"></i>
+                        }
+                        @if (config.add_config?.show_index) {
+                            <p class="font-semibold text-xl">{{ i + 1 }}</p>
+                        }
                     </div>
                     <div class="w-full border-left-1 pl-2">
                         <app-form-control [control]="c"></app-form-control>

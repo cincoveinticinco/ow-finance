@@ -9,7 +9,7 @@ export const ExampleLayout: ILayout = {
             classes: 'text-lg px-2',
             config: {
                 value: 'Personal information',
-                hasSeparator: true
+                has_separator: true
             }
         },
         {
@@ -17,9 +17,9 @@ export const ExampleLayout: ILayout = {
             block_type: 'form',
             classes: '',
             config: {
-                control: {
+                form: {
                     name: 'personal_data_form',
-                    control_type: 'group',
+                    form_type: 'group',
                     classes: '',
                     validators: [
                         {
@@ -31,7 +31,7 @@ export const ExampleLayout: ILayout = {
                         controls: [
                             {
                                 name: 'full_name',
-                                type: 'input',
+                                control_type: 'input',
                                 classes: 'md:col-4 sm:col-12',
                                 validators: [
                                     {
@@ -56,7 +56,7 @@ export const ExampleLayout: ILayout = {
                             },
                             {
                                 name: 'age',
-                                type: 'input',
+                                control_type: 'input',
                                 classes: 'md:col-4 sm:col-12',
                                 validators: [
                                     {
@@ -86,7 +86,7 @@ export const ExampleLayout: ILayout = {
                             },
                             {
                                 name: 'phone',
-                                type: 'input',
+                                control_type: 'input',
                                 classes: 'md:col-4 sm:col-12',
                                 validators: [
                                     {
@@ -155,9 +155,9 @@ export const ExampleLayout: ILayout = {
             block_type: 'form',
             classes: '',
             config: {
-                control: {
+                form: {
                     name: 'provider-data-form',
-                    control_type: 'group',
+                    form_type: 'group',
                     classes: '',
                     validators: [
                         {
@@ -169,7 +169,7 @@ export const ExampleLayout: ILayout = {
                         controls: [
                             {
                                 name: 'personal_type',
-                                type: 'input',
+                                control_type: 'input',
                                 classes: 'md:col-2 sm:col-12',
                                 validators: [
                                     {
@@ -199,7 +199,7 @@ export const ExampleLayout: ILayout = {
                             },
                             {
                                 name: 'document_type',
-                                type: 'input',
+                                control_type: 'input',
                                 classes: 'md:col-2 sm:col-12',
                                 validators: [
                                     {
@@ -230,7 +230,7 @@ export const ExampleLayout: ILayout = {
                             },
                             {
                                 name: 'document_number',
-                                type: 'input',
+                                control_type: 'input',
                                 classes: 'md:col-2 sm:col-12',
                                 validators: [
                                     {
@@ -251,7 +251,7 @@ export const ExampleLayout: ILayout = {
                             },
                             {
                                 name: 'provider_name',
-                                type: 'input',
+                                control_type: 'input',
                                 classes: 'md:col-6 sm:col-12',
                                 validators: [
                                     {
@@ -272,7 +272,7 @@ export const ExampleLayout: ILayout = {
                             },
                             {
                                 name: 'email',
-                                type: 'input',
+                                control_type: 'input',
                                 classes: 'md:col-6 sm:col-12',
                                 validators: [
                                     {
@@ -299,7 +299,7 @@ export const ExampleLayout: ILayout = {
                             },
                             {
                                 name: 'company_phone',
-                                type: 'input',
+                                control_type: 'input',
                                 classes: 'md:col-2 sm:col-12',
                                 validators: [
                                     {
@@ -330,7 +330,7 @@ export const ExampleLayout: ILayout = {
                             },
                             {
                                 name: 'contact_person',
-                                type: 'input',
+                                control_type: 'input',
                                 classes: 'md:col-4 sm:col-12',
                                 validators: [
                                     {
@@ -350,7 +350,7 @@ export const ExampleLayout: ILayout = {
                             },
                             {
                                 name: 'company_country',
-                                type: 'input',
+                                control_type: 'input',
                                 classes: 'md:col-2 sm:col-12',
                                 validators: [
                                     {
@@ -370,7 +370,7 @@ export const ExampleLayout: ILayout = {
                             },
                             {
                                 name: 'company_city',
-                                type: 'input',
+                                control_type: 'input',
                                 classes: 'md:col-2 sm:col-12',
                                 validators: [
                                     {
@@ -390,7 +390,7 @@ export const ExampleLayout: ILayout = {
                             },
                             {
                                 name: 'company_address',
-                                type: 'input',
+                                control_type: 'input',
                                 classes: 'md:col-4 sm:col-12',
                                 validators: [
                                     {
@@ -410,7 +410,7 @@ export const ExampleLayout: ILayout = {
                             },
                             {
                                 name: 'company_place',
-                                type: 'input',
+                                control_type: 'input',
                                 classes: 'md:col-2 sm:col-12',
                                 validators: [
                                     {
@@ -430,7 +430,7 @@ export const ExampleLayout: ILayout = {
                             },
                             {
                                 name: 'company_zip_code',
-                                type: 'input',
+                                control_type: 'input',
                                 classes: 'md:col-2 sm:col-12',
                                 validators: [
                                     {
@@ -458,24 +458,39 @@ export const ExampleLayout: ILayout = {
                 },
             }
         },
-        {
-            key: 'investors_title',
+                {
+            key: 'legal_contact_title',
             block_type: 'title',
-            classes: 'text-lg px-2',
+            classes: 'text-lg px-2 mt-2',
             config: {
-                value: 'Investors',
+                value: 'Legal contact',
                 has_separator: true
             }
         },
         {
-            key: 'investors_data',
-            block_type: 'form',
-            classes: '',
+            key: 'legal_contact_text',
+            block_type: 'text',
             config: {
-                control: {
-                    name: 'investors_data',
-                    control_type: 'group',
-                    classes: 'py-0',
+                value: 'Include the main and substitues if they exists',
+            }
+        },
+        {
+            key: 'main_title',
+            block_type: 'title',
+            classes: 'text-sm px-2',
+            config: {
+                value: '1. Main',
+            }
+        },
+        {
+            key: 'main_form',
+            block_type: 'form',
+            classes: 'py-0 col-12',
+            config: {
+                form: {
+                    name: 'main_data',
+                    form_type: 'group',
+                    classes: '',
                     validators: [
                         {
                             validator_type: 'required'
@@ -485,12 +500,11 @@ export const ExampleLayout: ILayout = {
                     config: {
                         controls: [
                             {
-                                key: 'investors',
-                                name: 'investors',
+                                key: 'main',
+                                name: 'main',
+                                form_type: 'array',
                                 control_type: 'array',
-                                type: 'array',
-                                classes: 'col-12 py-0',
-                                key_block: 'investors_data',
+                                classes: '',
                                 validators: [
                                     {
                                         validator_type: 'required'
@@ -502,8 +516,7 @@ export const ExampleLayout: ILayout = {
                                         {
                                             key: 0,
                                             name: '0',
-                                            control_type: 'group',
-                                            classes: '',
+                                            form_type: 'group',
                                             validators: [
                                                 {
                                                     validator_type: 'required'
@@ -513,9 +526,9 @@ export const ExampleLayout: ILayout = {
                                             config: {
                                                 controls: [
                                                     {
-                                                        name: 'investor_name',
-                                                        type: 'input',
-                                                        classes: 'col-12',
+                                                        name: 'main_name',
+                                                        control_type: 'input',
+                                                        classes: 'col-4',
                                                         validators: [
                                                             {
                                                                 validator_type: 'required'
@@ -528,15 +541,98 @@ export const ExampleLayout: ILayout = {
                                                             placeholder: 'John Doe'
                                                         },
                                                         value: null
+                                                    },
+                                                    {
+                                                        name: 'main_document_number',
+                                                        control_type: 'input',
+                                                        classes: 'col-4',
+                                                        validators: [
+                                                            {
+                                                                validator_type: 'required'
+                                                            }
+                                                        ],
+                                                        disabled: false,
+                                                        config: {
+                                                            type: 'number',
+                                                            label: 'Document number',
+                                                            placeholder: '101010100101'
+                                                        },
+                                                        value: null
+                                                    },
+                                                    {
+                                                        name: 'main_born_country',
+                                                        control_type: 'input',
+                                                        classes: 'col-4',
+                                                        validators: [
+                                                            {
+                                                                validator_type: 'required'
+                                                            }
+                                                        ],
+                                                        disabled: false,
+                                                        config: {
+                                                            type: 'text',
+                                                            label: 'Born country',
+                                                            placeholder: 'Colombia'
+                                                        },
+                                                        value: null
+                                                    },
+                                                    {
+                                                        name: 'main_phone',
+                                                        control_type: 'input',
+                                                        classes: 'col-4',
+                                                        validators: [
+                                                            {
+                                                                validator_type: 'required'
+                                                            }
+                                                        ],
+                                                        disabled: false,
+                                                        config: {
+                                                            type: 'number',
+                                                            label: 'Phone',
+                                                            placeholder: '3213213213'
+                                                        },
+                                                        value: null
+                                                    },
+                                                    {
+                                                        name: 'main_charge',
+                                                        control_type: 'input',
+                                                        classes: 'col-4',
+                                                        validators: [
+                                                            {
+                                                                validator_type: 'required'
+                                                            }
+                                                        ],
+                                                        disabled: false,
+                                                        config: {
+                                                            type: 'text',
+                                                            label: 'Charge',
+                                                            placeholder: 'CEO'
+                                                        },
+                                                        value: null
+                                                    },
+                                                    {
+                                                        name: 'main_email',
+                                                        control_type: 'input',
+                                                        classes: 'col-4',
+                                                        validators: [
+                                                            {
+                                                                validator_type: 'required'
+                                                            }
+                                                        ],
+                                                        disabled: false,
+                                                        config: {
+                                                            type: 'email',
+                                                            label: 'Email',
+                                                            placeholder: 'example@mail.com'
+                                                        },
+                                                        value: null
                                                     }
                                                 ]
                                             }
                                         },
                                     ],
                                     add_config: {
-                                        show_add: true,
-                                        add_text: 'Add',
-                                        limit: 4
+                                        show_add: false
                                     } 
                                 }
                             }
@@ -546,30 +642,21 @@ export const ExampleLayout: ILayout = {
             }
         },
         {
-            key: 'legal-contact-title',
-            block_type: 'title',
-            classes: 'text-lg px-2 mt-2',
-            config: {
-                value: 'Legal contact',
-                hasSeparator: true
-            }
-        },
-        {
-            key: 'substitutes-title',
+            key: 'substitutes_title',
             block_type: 'title',
             classes: 'text-sm px-2',
             config: {
-                value: 'Substitutes',
+                value: '2. Substitutes',
             }
         },
         {
-            key: 'substitutes_data',
+            key: 'substitutes_form',
             block_type: 'form',
             classes: 'py-0 col-12',
             config: {
-                control: {
+                form: {
                     name: 'substitutes_data',
-                    control_type: 'group',
+                    form_type: 'group',
                     classes: '',
                     validators: [
                         {
@@ -582,10 +669,9 @@ export const ExampleLayout: ILayout = {
                             {
                                 key: 'substitutes',
                                 name: 'substitutes',
+                                form_type: 'array',
                                 control_type: 'array',
-                                type: 'array',
                                 classes: '',
-                                key_block: 'substitutes_data',
                                 validators: [
                                     {
                                         validator_type: 'required'
@@ -595,7 +681,7 @@ export const ExampleLayout: ILayout = {
                                 config: {
                                     controls: [
                                         {
-                                            control_type: 'group',
+                                            form_type: 'group',
                                             validators: [
                                                 {
                                                     validator_type: 'required'
@@ -606,7 +692,7 @@ export const ExampleLayout: ILayout = {
                                                 controls: [
                                                     {
                                                         name: 'investor_name',
-                                                        type: 'input',
+                                                        control_type: 'input',
                                                         classes: 'col-6',
                                                         validators: [
                                                             {
@@ -623,7 +709,7 @@ export const ExampleLayout: ILayout = {
                                                     },
                                                     {
                                                         name: 'investor_phone',
-                                                        type: 'input',
+                                                        control_type: 'input',
                                                         classes: 'col-6',
                                                         validators: [
                                                             {
@@ -640,7 +726,7 @@ export const ExampleLayout: ILayout = {
                                                     },
                                                     {
                                                         name: 'investor_age',
-                                                        type: 'input',
+                                                        control_type: 'input',
                                                         classes: 'col-6 mt-2',
                                                         validators: [
                                                             {
@@ -661,8 +747,10 @@ export const ExampleLayout: ILayout = {
                                     ],
                                     add_config: {
                                         show_add: true,
+                                        show_index: true,
                                         add_text: 'Add',
-                                        limit: 2
+                                        limit: 2,
+                                        can_remove_first: true
                                     } 
                                 }
                             }
@@ -670,7 +758,163 @@ export const ExampleLayout: ILayout = {
                     }
                 }
             }
-        }
+        },
+        {
+            key: 'investors_title',
+            block_type: 'title',
+            classes: 'text-lg px-2',
+            config: {
+                value: 'Investors',
+                has_separator: true
+            }
+        },
+        {
+            key: 'investors_data',
+            block_type: 'form',
+            classes: '',
+            config: {
+                form: {
+                    name: 'investors_data',
+                    form_type: 'group',
+                    classes: 'py-0',
+                    validators: [
+                        {
+                            validator_type: 'required'
+                        }
+                    ],
+                    disabled: false,
+                    config: {
+                        controls: [
+                            {
+                                key: 'investors',
+                                name: 'investors',
+                                form_type: 'array',
+                                control_type: 'array',
+                                classes: 'col-12 py-0',
+                                validators: [
+                                    {
+                                        validator_type: 'required'
+                                    }
+                                ],
+                                disabled: false,
+                                config: {
+                                    controls: [
+                                        {
+                                            key: 0,
+                                            name: '0',
+                                            form_type: 'group',
+                                            classes: '',
+                                            validators: [
+                                                {
+                                                    validator_type: 'required'
+                                                }
+                                            ],
+                                            disabled: false,
+                                            config: {
+                                                controls: [
+                                                    {
+                                                        name: 'investor_name',
+                                                        control_type: 'input',
+                                                        classes: 'col-5',
+                                                        validators: [
+                                                            {
+                                                                validator_type: 'required'
+                                                            }
+                                                        ],
+                                                        disabled: false,
+                                                        config: {
+                                                            type: 'text',
+                                                            label: 'Complete name',
+                                                            placeholder: 'John Doe'
+                                                        },
+                                                        value: null
+                                                    },
+                                                    {
+                                                        name: 'investor_document_type',
+                                                        control_type: 'input',
+                                                        classes: 'col-2',
+                                                        validators: [
+                                                            {
+                                                                validator_type: 'required'
+                                                            }
+                                                        ],
+                                                        disabled: false,
+                                                        config: {
+                                                            type: 'text',
+                                                            label: 'Document type',
+                                                            placeholder: 'CC'
+                                                        },
+                                                        value: null
+                                                    },
+                                                    {
+                                                        name: 'investor_document_number',
+                                                        control_type: 'input',
+                                                        classes: 'col-2',
+                                                        validators: [
+                                                            {
+                                                                validator_type: 'required'
+                                                            }
+                                                        ],
+                                                        disabled: false,
+                                                        config: {
+                                                            type: 'text',
+                                                            label: 'Document number',
+                                                            placeholder: '101010101'
+                                                        },
+                                                        value: null
+                                                    },
+                                                    {
+                                                        name: 'investor_born_country',
+                                                        control_type: 'input',
+                                                        classes: 'col-2',
+                                                        validators: [
+                                                            {
+                                                                validator_type: 'required'
+                                                            }
+                                                        ],
+                                                        disabled: false,
+                                                        config: {
+                                                            type: 'text',
+                                                            label: 'Born country',
+                                                            placeholder: 'Colombia'
+                                                        },
+                                                        value: null
+                                                    },
+                                                    {
+                                                        name: 'investor_percentage',
+                                                        control_type: 'input',
+                                                        classes: 'col-1',
+                                                        validators: [
+                                                            {
+                                                                validator_type: 'required'
+                                                            }
+                                                        ],
+                                                        disabled: false,
+                                                        config: {
+                                                            type: 'number',
+                                                            label: 'Percentage',
+                                                            placeholder: 'Colombia'
+                                                        },
+                                                        value: null
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                    ],
+                                    add_config: {
+                                        show_add: true,
+                                        show_index: true,
+                                        add_text: 'Add',
+                                        can_remove_first: false,
+                                        limit: 4
+                                    } 
+                                }
+                            }
+                        ],
+                    }
+                }
+            }
+        },
     ],
     action_config: {
         show_cancel: true,

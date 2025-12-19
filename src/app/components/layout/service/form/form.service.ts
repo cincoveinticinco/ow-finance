@@ -29,7 +29,7 @@ export class FormService implements OnDestroy {
   public addControl(form: FormGroup | FormArray, control: IControl): AbstractControl {
     const validators = this.createValidator(control.validators!);
     let abstractControl: AbstractControl;
-    switch(control.control_type) {
+    switch(control.form_type) {
       case "group":
         abstractControl = this.fb.group({}, {validators})
         break;

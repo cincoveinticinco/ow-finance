@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TextareaDoc } from './textarea-doc';
+import { ExampleDoc } from './example-doc';
 
-describe('TextareaDoc', () => {
-  let component: TextareaDoc;
-  let fixture: ComponentFixture<TextareaDoc>;
+describe('ExampleDoc', () => {
+  let component: ExampleDoc;
+  let fixture: ComponentFixture<ExampleDoc>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TextareaDoc]
+      imports: [ExampleDoc]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(TextareaDoc);
+    fixture = TestBed.createComponent(ExampleDoc);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

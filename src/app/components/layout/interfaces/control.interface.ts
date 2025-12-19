@@ -4,8 +4,8 @@ import { IValidator } from "./validator.interface";
 
 export interface IControl {
     name?: string;
-    type?: string;
     control_type?: string;
+    form_type?: string;
     classes?: string;
     effects?: IEffect[];
     validators?: IValidator[];
@@ -15,5 +15,4 @@ export interface IControl {
     value?: any;
     idName?: string;
     key?: string | number;
-    key_block?: string;
 }

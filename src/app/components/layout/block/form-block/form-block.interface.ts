@@ -1,6 +1,6 @@
 import { IControl } from "../../interfaces/control.interface";
 
 export interface IFormBlock {
-    control?: IControl;
+    form?: IControl;
     lazy?: string;
 }

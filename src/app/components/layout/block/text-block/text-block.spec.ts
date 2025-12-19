@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TextInputDoc } from './text-input-doc';
+import { TextBlock } from './text-block';
 
-describe('TextInputDoc', () => {
-  let component: TextInputDoc;
-  let fixture: ComponentFixture<TextInputDoc>;
+describe('TextBlock', () => {
+  let component: TextBlock;
+  let fixture: ComponentFixture<TextBlock>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TextInputDoc]
+      imports: [TextBlock]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(TextInputDoc);
+    fixture = TestBed.createComponent(TextBlock);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

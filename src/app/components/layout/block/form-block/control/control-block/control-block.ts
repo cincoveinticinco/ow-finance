@@ -29,7 +29,7 @@ export class ControlBlock {
   }
 
   private getControlBlockClass(): Type<IControlComponent> {
-    const componentClass = this.CONTROL_CONFIG[this.control.type!];
+    const componentClass = this.CONTROL_CONFIG[this.control.control_type!];
     if (!componentClass) {
       throw {code: 'control-component-not-found', message: "Control component class not found"}
     }

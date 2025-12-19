@@ -48,11 +48,20 @@
         ]
     },
     {
+        "label": "Validator",
+        "items": [
+            {
+                "label": "General information",
+                "routerLink": "/docs/validator"
+            }
+        ]
+    },
+    {
         "label": "Example",
         "items": [
             {
                 "label": "Basic example",
-                "routerLink": "/docs/radio-input"
+                "routerLink": "/docs/example"
             }
         ]
     }

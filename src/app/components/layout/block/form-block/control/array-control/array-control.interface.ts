@@ -8,6 +8,8 @@ export interface IArrayControl extends IBaseControl {
 
 export interface IAddConfig {
     show_add?: boolean;
+    show_index?: boolean;
     add_text?: string;
+    can_remove_first?: boolean;
     limit?: number;
 }
