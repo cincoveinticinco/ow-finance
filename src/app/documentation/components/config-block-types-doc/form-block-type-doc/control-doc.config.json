@@ -24,7 +24,7 @@
     },
     {
         "property": "form_type",
-        "description": "Specifies the control type.",
+        "description": "Specifies the form type.",
         "type": "string",
         "options": [
             {
@@ -39,7 +39,7 @@
     },
     {
         "property": "classes",
-        "description": "Specifies the CSS classes to be applied to the form group.",
+        "description": "Specifies the CSS classes to be applied to the control.",
         "type": "string"
     },
     {
