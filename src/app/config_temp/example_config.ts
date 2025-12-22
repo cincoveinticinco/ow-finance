@@ -609,134 +609,128 @@ export const ExampleLayout: ILayout = {
                 } 
             }
         },
-        // {
-        //     key: 'investors_title',
-        //     block_type: 'title',
-        //     classes: 'text-lg px-2',
-        //     config: {
-        //         value: 'Investors',
-        //         has_separator: true
-        //     }
-        // },
-        // {
-        //     key: 'investors_data',
-        //     block_type: 'form',
-        //     classes: '',
-        //     config: {
-        //         controls: [
-        //             {
-        //                 name: 'investors',
-        //                 form_type: 'array',
-        //                 control_type: 'array',
-        //                 config: {
-        //                     controls: [
-        //                         {
-        //                             key: 0,
-        //                             name: '0',
-        //                             form_type: 'group',
-        //                             config: {
-        //                                 controls: [
-        //                                     {
-        //                                         name: 'investor_name',
-        //                                         control_type: 'input',
-        //                                         classes: 'col-5',
-        //                                         validators: [
-        //                                             {
-        //                                                 validator_type: 'required'
-        //                                             }
-        //                                         ],
-        //                                         disabled: false,
-        //                                         config: {
-        //                                             type: 'text',
-        //                                             label: 'Complete name',
-        //                                             placeholder: 'John Doe'
-        //                                         },
-        //                                         value: null
-        //                                     },
-        //                                     {
-        //                                         name: 'investor_document_type',
-        //                                         control_type: 'input',
-        //                                         classes: 'col-2',
-        //                                         validators: [
-        //                                             {
-        //                                                 validator_type: 'required'
-        //                                             }
-        //                                         ],
-        //                                         disabled: false,
-        //                                         config: {
-        //                                             type: 'text',
-        //                                             label: 'Document type',
-        //                                             placeholder: 'CC'
-        //                                         },
-        //                                         value: null
-        //                                     },
-        //                                     {
-        //                                         name: 'investor_document_number',
-        //                                         control_type: 'input',
-        //                                         classes: 'col-2',
-        //                                         validators: [
-        //                                             {
-        //                                                 validator_type: 'required'
-        //                                             }
-        //                                         ],
-        //                                         disabled: false,
-        //                                         config: {
-        //                                             type: 'text',
-        //                                             label: 'Document number',
-        //                                             placeholder: '101010101'
-        //                                         },
-        //                                         value: null
-        //                                     },
-        //                                     {
-        //                                         name: 'investor_born_country',
-        //                                         control_type: 'input',
-        //                                         classes: 'col-2',
-        //                                         validators: [
-        //                                             {
-        //                                                 validator_type: 'required'
-        //                                             }
-        //                                         ],
-        //                                         disabled: false,
-        //                                         config: {
-        //                                             type: 'text',
-        //                                             label: 'Born country',
-        //                                             placeholder: 'Colombia'
-        //                                         },
-        //                                         value: null
-        //                                     },
-        //                                     {
-        //                                         name: 'investor_percentage',
-        //                                         control_type: 'input',
-        //                                         classes: 'col-1',
-        //                                         validators: [
-        //                                             {
-        //                                                 validator_type: 'required'
-        //                                             }
-        //                                         ],
-        //                                         disabled: false,
-        //                                         config: {
-        //                                             type: 'number',
-        //                                             label: 'Percentage',
-        //                                             placeholder: 'Colombia'
-        //                                         },
-        //                                         value: null
-        //                                     }
-        //                                 ]
-        //                             }
-        //                         },
-        //                     ],
-        //                     add_config: {
-        //                         show_add: true,
-        //                         show_index: true,
-        //                         add_text: 'Add',
-        //                         can_remove_first: false,
-        //                         limit: 4
-        //                     } 
-        //                 }
-        //             }
-        //         ],
-        //     }
-        // },
+        {
+            key: 'investors_title',
+            block_type: 'title',
+            classes: 'text-lg px-2',
+            config: {
+                value: 'Investors',
+                has_separator: true
+            }
+        },
+        {
+            key: 'investors_data',
+            block_type: 'array',
+            classes: '',
+            config: {
+                name: 'investors_data',
+                form_type: 'array',
+                control_type: 'array',
+                groups: [
+                    {
+                        key: 0,
+                        name: '0',
+                        form_type: 'group',
+                        config: {
+                            controls: [
+                                {
+                                    name: 'investor_name',
+                                    control_type: 'input',
+                                    classes: 'col-5',
+                                    validators: [
+                                        {
+                                            validator_type: 'required'
+                                        }
+                                    ],
+                                    disabled: false,
+                                    config: {
+                                        type: 'text',
+                                        label: 'Complete name',
+                                        placeholder: 'John Doe'
+                                    },
+                                    value: null
+                                },
+                                {
+                                    name: 'investor_document_type',
+                                    control_type: 'input',
+                                    classes: 'col-2',
+                                    validators: [
+                                        {
+                                            validator_type: 'required'
+                                        }
+                                    ],
+                                    disabled: false,
+                                    config: {
+                                        type: 'text',
+                                        label: 'Document type',
+                                        placeholder: 'CC'
+                                    },
+                                    value: null
+                                },
+                                {
+                                    name: 'investor_document_number',
+                                    control_type: 'input',
+                                    classes: 'col-2',
+                                    validators: [
+                                        {
+                                            validator_type: 'required'
+                                        }
+                                    ],
+                                    disabled: false,
+                                    config: {
+                                        type: 'text',
+                                        label: 'Document number',
+                                        placeholder: '101010101'
+                                    },
+                                    value: null
+                                },
+                                {
+                                    name: 'investor_born_country',
+                                    control_type: 'input',
+                                    classes: 'col-2',
+                                    validators: [
+                                        {
+                                            validator_type: 'required'
+                                        }
+                                    ],
+                                    disabled: false,
+                                    config: {
+                                        type: 'text',
+                                        label: 'Born country',
+                                        placeholder: 'Colombia'
+                                    },
+                                    value: null
+                                },
+                                {
+                                    name: 'investor_percentage',
+                                    control_type: 'input',
+                                    classes: 'col-1',
+                                    validators: [
+                                        {
+                                            validator_type: 'required'
+                                        }
+                                    ],
+                                    disabled: false,
+                                    config: {
+                                        type: 'number',
+                                        label: 'Percentage',
+                                        placeholder: 'Colombia'
+                                    },
+                                    value: null
+                                }
+                            ]
+                        }
+                    },
+                ],
+                add_config: {
+                    show_add: true,
+                    show_index: true,
+                    add_text: 'Add',
+                    can_remove_first: false,
+                    limit: 4
+                }
+            }
+        },
     ],
     action_config: {
         show_cancel: true,

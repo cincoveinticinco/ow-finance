@@ -32,7 +32,10 @@ export class ArrayControl extends ControlBlockComponentBase implements IControlC
 
   load(control: IControl): void {
     this.control = control as IArrayBlock;
-    this.form = this.controlContainer.control as FormGroup; 
+    this.form = this.controlContainer.control as FormGroup;
+    for (const c of this.control.groups) {
+      this.add(c);
+    }
   }
 
   override add(control: IControl) {
