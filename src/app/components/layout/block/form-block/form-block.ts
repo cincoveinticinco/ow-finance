@@ -1,24 +1,24 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, inject, Input, OnInit } from '@angular/core';
 import { IBlock } from '../../interfaces/block.interface';
 import { ControlContainer, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { IFormBlock } from './form-block.interface';
 import { IBlockComponent } from '../../interfaces/block-component.interface';
 import { BlockComponentBase } from '../../lib/block-component.base';
 import { FormControlComponent } from './control/form-control/form-control';
+import { ControlBlock } from './control/control-block/control-block';
+import { TitleBlock } from '../title-block/title-block';
+import { FormService } from '../../service/form/form.service';
 
 @Component({
   selector: 'app-form-block',
-  imports: [FormControlComponent, ReactiveFormsModule],
+  imports: [FormControlComponent, ReactiveFormsModule, ControlBlock, TitleBlock],
   templateUrl: './form-block.html',
   styleUrl: './form-block.scss',
 })
 export class FormBlock extends BlockComponentBase<IFormBlock> implements OnInit, IBlockComponent {
-
-  parentForm!: FormGroup;
   ready = false;
 
   constructor(
-    private controlContainer: ControlContainer,
     // private layoutService: LayoutService
   ){
     super();
@@ -33,6 +33,7 @@ export class FormBlock extends BlockComponentBase<IFormBlock> implements OnInit,
   load(block: IBlock): void {
     this.add(block);
     this.parentForm = this.controlContainer.control as FormGroup;
+    this.addChildForm();
     // if (!this.config.lazy) return;
     this.ready = false;
     // this.loadForm();

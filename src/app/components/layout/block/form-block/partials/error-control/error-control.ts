@@ -3,6 +3,7 @@ import { AbstractControl, ControlContainer, FormGroup } from '@angular/forms';
 import { Message } from 'primeng/message';
 import { debounceTime, Subject, takeUntil } from 'rxjs';
 import { FormErrorService } from '../../../../service/form-error/form-error.service';
+import { IControl } from '../../../../interfaces/control.interface';
 
 @Component({
   selector: 'app-error-control',
@@ -13,7 +14,7 @@ import { FormErrorService } from '../../../../service/form-error/form-error.serv
 export class ErrorControl implements OnInit, OnDestroy {
 
   destroy: Subject<boolean> = new Subject<boolean>();
-  @Input() control: any;
+  @Input() control!: IControl;
 
   ref!: AbstractControl;
   errorMessage = '';
@@ -24,7 +25,7 @@ export class ErrorControl implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    this.ref = (this.controlContainer.control as FormGroup).controls[this.control.name];
+    this.ref = (this.controlContainer.control as FormGroup).controls[this.control.name!];
     this.listeningErrors();
   }
 
@@ -39,7 +40,7 @@ export class ErrorControl implements OnInit, OnDestroy {
     ).subscribe((status: string) => {
       const ERROR_KEY = Object.keys(this.ref.errors || {})[0];
       if (status === 'INVALID') {
-        this.errorMessage = this.control?.config_messages?.[ERROR_KEY] || this.formErrorService.getError(this.ref);
+        this.errorMessage = this.control?.validators?.find(v => v.validator_type === ERROR_KEY)?.error_message || this.formErrorService.getError(this.ref)!;
       } else {
         this.errorMessage = '';
       }

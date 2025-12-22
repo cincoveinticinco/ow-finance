@@ -1,0 +1,17 @@
+@if (config.title) {
+    <app-title-block [config]="config.title"></app-title-block>
+}
+
+@if (config.parragraph) {
+    <app-text-block [config]="config.parragraph"></app-text-block>
+}
+
+
+<form [formGroup]="form">
+    <div class="w-full">
+        @if(form) {
+            <app-control-block [control]="block.config"></app-control-block>
+            <!-- <app-form-control [control]="config.controls!"></app-form-control> -->
+        }
+    </div>
+</form>

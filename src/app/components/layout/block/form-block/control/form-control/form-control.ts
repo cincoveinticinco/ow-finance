@@ -30,6 +30,7 @@ export class FormControlComponent extends ControlBlockComponentBase implements O
   }
 
   load(control: IControl): void {
+    this.form = this.controlContainer.control as FormGroup;
     this.add(control);
   }
 

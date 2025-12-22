@@ -9,7 +9,6 @@ export interface IControl {
     classes?: string;
     effects?: IEffect[];
     validators?: IValidator[];
-    config_messages?: {[key: string]: string};
     disabled?: boolean;
     config?: IControlConfig;
     value?: any;

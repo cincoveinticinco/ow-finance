@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ControlContainer, ReactiveFormsModule } from '@angular/forms';
+import { ControlContainer, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ControlBlockComponentBase } from '../../../../lib/control-block-component.base';
 import { IControlComponent } from '../../../../interfaces/control-component.interface';
 import { IArrayControl } from './array-control.interface';
@@ -8,17 +8,19 @@ import { IControl } from '../../../../interfaces/control.interface';
 import { FormControlComponent } from '../form-control/form-control';
 import { Button } from 'primeng/button';
 import { LayoutCoreService } from '../../../../service/layout-core/layout-core.service';
-import { isNil } from 'lodash';
+import { isNil, last } from 'lodash';
+import { IArrayBlock } from '../../../array-block/array-block.interface';
+import { ControlBlock } from '../control-block/control-block';
 
 @Component({
   selector: 'app-array-control',
-  imports: [ReactiveFormsModule, FormControlComponent, Button],
+  imports: [ReactiveFormsModule, FormControlComponent, Button, ControlBlock],
   templateUrl: './array-control.html',
   styleUrl: './array-control.scss',
 })
 export class ArrayControl extends ControlBlockComponentBase implements IControlComponent {
 
-  declare config: IArrayControl;
+  declare control: IArrayBlock;
 
   constructor(
     protected override controlContainer: ControlContainer,
@@ -29,30 +31,39 @@ export class ArrayControl extends ControlBlockComponentBase implements IControlC
   }
 
   load(control: IControl): void {
-    this.add(control);
+    this.control = control as IArrayBlock;
+    this.form = this.controlContainer.control as FormGroup; 
+  }
+
+  override add(control: IControl) {
+    this.form = this.controlContainer.control as FormGroup;
+    this.formContext = this.formService.addControl(this.form, control);
   }
   
   protected addControl() {
-    const controls = this.control.config?.['controls'];
+    const controls = this.control?.['groups'];
     const lastControl = controls[controls.length - 1];
-    if (controls.length === this.config.add_config?.limit) {
+    if (controls.length === this.control.add_config?.limit) {
       throw {code: 'limit-was-reach-out', message: "Limit was reach out"}
     }
     if (!lastControl.key && !lastControl.name) {
       lastControl.key = 0;
       lastControl.name = '0';
+      this.add(lastControl);
+      this.cdr.detectChanges();
       return;
     }
-    const newControl = {...lastControl, key: lastControl.key + 1, name: `${lastControl.key + 1}`, value: null}
+    const newControl = {...lastControl, key: +lastControl.key! + 1, name: `${+lastControl.key! + 1}`, value: null}
+    this.add(newControl);
     controls.push(newControl);
   }
 
   protected deleteControl(key: string | number) {
-    const controls = this.control.config?.['controls'];
+    const controls = this.control?.['groups'];
     if (controls.length === 1) {
       const lastControl = controls[controls.length - 1];
-      lastControl.key = null;
-      lastControl.name = null;
+      lastControl.key = undefined;
+      lastControl.name = undefined;
       return;
     }
     const controlIndex = controls.findIndex((c: IControl) => c.key === key);

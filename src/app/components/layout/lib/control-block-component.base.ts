@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy } from "@angular/core";
+import { ChangeDetectorRef, Component, inject, Input, OnDestroy } from "@angular/core";
 import { IControl } from "../interfaces/control.interface";
 import { AbstractControl, ControlContainer, FormArray, FormGroup } from "@angular/forms";
 import { Subject } from "rxjs";
@@ -8,13 +8,14 @@ import { IControlConfig } from "../interfaces/control-component.interface";
 @Component({ template: '' })
 export abstract class ControlBlockComponentBase implements OnDestroy {
     @Input() control!: IControl;
-    @Input() lazy!: boolean;
 
     config!: IControlConfig;
     form!: FormGroup;
     formContext!: AbstractControl;
     isGroup!: boolean;
     destroy: Subject<boolean> = new Subject<boolean>();
+
+    protected cdr = inject(ChangeDetectorRef);
 
     constructor(
         protected controlContainer: ControlContainer,
@@ -38,7 +39,7 @@ export abstract class ControlBlockComponentBase implements OnDestroy {
         // this.form = this.controlContainer.control as FormArray;
         this.formContext = this.formService.addControl(this.form, control);
         this.isGroup = this.controlContainer.control!.constructor.name == FormGroup.name;
-        if (this.config.actionSubscribe) {
+        if (this.config?.actionSubscribe) {
             // call listen readonly
         }
     }

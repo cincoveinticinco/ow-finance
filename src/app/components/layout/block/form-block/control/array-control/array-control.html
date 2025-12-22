@@ -1,26 +1,27 @@
 <div [formGroup]="form">
-    <div [formArrayName]="control.name!">
-        @for (c of config.controls; track c.key; let i = $index) {
-            @if(!isNull(c.name) && !isNull(c.key)) {
+    @for (c of control.groups; track c.key; let i = $index) {
+        @if(!isNull(c.name) && !isNull(c.key)) {
+            <div [formArrayName]="c.name">
                 <div class="flex align-items-center mb-3">
                     <div class="mr-2 flex gap-2 align-items-center">
-                        @if (config.add_config?.can_remove_first || i > 0) {
+                        @if (control.add_config?.can_remove_first || i > 0) {
                             <i class="pi pi-trash invalid cursor-pointer" (click)="deleteControl(c.key)"></i>
                         }
-                        @if (config.add_config?.show_index) {
+                        @if (control.add_config?.show_index) {
                             <p class="font-semibold text-xl">{{ i + 1 }}</p>
                         }
                     </div>
                     <div class="w-full border-left-1 pl-2">
                         <app-form-control [control]="c"></app-form-control>
+                        <!-- <app-control-block [control]="control"></app-control-block> -->
                     </div>
                 </div>
-            }
+            </div>
         }
-    </div>
-    @if (config.add_config?.show_add) {
+    }
+    @if (control.add_config?.show_add) {
         <div class="col-12 md:col-2 lg:col-2 mt-4">
-            <p-button [disabled]="config.controls?.length === config.add_config?.limit" [label]="config.add_config?.add_text" (click)="addControl()" />
+            <p-button [disabled]="control.groups.length === control.add_config?.limit" [label]="control.add_config?.add_text" (click)="addControl()" />
         </div>
     }
 </div>

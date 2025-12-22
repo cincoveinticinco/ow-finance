@@ -1,5 +1,21 @@
-<form [formGroup]="parentForm">
-    @if(ready) {
-        <app-form-control [control]="config.form!"></app-form-control>
-    }
+@if (config.title) {
+    <app-title-block [config]="config.title"></app-title-block>
+}
+
+@if (config.parragraph) {
+    <app-title-block [config]="config.parragraph"></app-title-block>
+}
+
+
+<form [formGroup]="form">
+    <div class="formgrid grid">
+        @if(ready) {
+            @for(control of config.controls; track control.name) {
+                <div id="{{control?.idName || control.name}}" class="{{control?.classes || 'col-12 py-2'}}">
+                    <app-control-block [control]="control"></app-control-block>
+                </div>
+            }
+            <!-- <app-form-control [control]="config.controls!"></app-form-control> -->
+        }
+    </div>
 </form>

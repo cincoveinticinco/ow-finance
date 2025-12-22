@@ -56,6 +56,7 @@ export class FormService implements OnDestroy {
 
   public createValidator(validators: IValidator[]): ValidatorFn[] {
     const response: ValidatorFn[] = [];
+    if (!validators) return response;
     for (const validator of validators) {
       response.push(this.VALIDATOR_CONFIG[validator.validator_type!](validator.params!));
     }
