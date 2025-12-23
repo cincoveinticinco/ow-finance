@@ -4,6 +4,4 @@ import { ILabel } from "../../partials/label/label.interface";
 
 export interface IInputControl extends ILabel, IBaseControl {
     type?: string;
-    placeholder?: string;
-    helpText?: string;
 }

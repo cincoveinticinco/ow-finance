@@ -1,6 +1,11 @@
 <div [formGroup]="form">
     <app-label labelBehavior [control]="control" [config]="config"></app-label>
-    <!-- <p-multiselect [options]="options" [optionLabel]="config.optionLabel" [optionLabel]="config.optionLabel" placeholder="Select Cities" [maxSelectedLabels]="3" class="w-full md:w-80" /> -->
+    @if (config.multiple) {
+        <p-multiselect [formControlName]="control.name!" [options]="config.options" [optionLabel]="config.option_label" [optionValue]="config.option_value" [placeholder]="config.placeholder || config.label" [selectionLimit]="config.limit_multiple" [filter]="config.searchable" [showToggleAll]="config.can_select_all" class="w-full md:w-80" />
+        <!-- <p-multiselect [formControlName]="control.name!" [options]="config.options" [optionLabel]="config.option_label" [optionValue]="config.option_value" [placeholder]="config.placeholder || config.label" [selectionLimit]="config.limit_multiple" [filter]="config.searchable" [showToggleAll]="false" class="w-full md:w-80" /> -->
+    } @else {
+        <p-select [formControlName]="control.name!" [options]="config.options" [optionLabel]="config.option_label" [optionValue]="config.option_value" [placeholder]="config.placeholder || config.label" [filter]="config.searchable" class="w-full md:w-56" />
+    }
     <app-error-control [control]="control"></app-error-control>
     @if (config.helpText && formContext.valid) {
         <small id="username-help">{{ config.helpText }}</small>

@@ -2,6 +2,8 @@ import { Injectable, signal } from '@angular/core';
 import { Subject } from 'rxjs';
 import { cloneDeep, get, set } from 'lodash'
 
+export interface IKeyData {key: string, options: any[]}
+
 @Injectable({
   providedIn: 'root',
 })
@@ -10,7 +12,7 @@ export class LayoutStorageService {
   private storage: any = {};
   
   // changedKeyData: Subject<string> = new Subject<string>();
-  private changedKeyDataSignal = signal<string | undefined>(undefined);
+  private changedKeyDataSignal = signal<IKeyData | undefined>(undefined);
   readonly changedKeyData = this.changedKeyDataSignal.asReadonly();
     
   constructor() {}
@@ -21,12 +23,6 @@ export class LayoutStorageService {
 
   public setData(data: any) {
       this.storage = cloneDeep(data);
-  }
-
-  public setKeyData(key: string, data: any) {
-    this.storage[key] = cloneDeep(data);
-    // this.changedKeyData.next(key);
-    this.updateKey(key);
   }
 
   public getKeyData(key: string) {
@@ -45,8 +41,8 @@ export class LayoutStorageService {
     set(record, path, value);
   }
 
-  public setKeyRef(key: string, data: any) {
-    this.storage[key] = data;
+  public setKeyData(key: IKeyData) {
+    // this.storage[key] = data;
     this.updateKey(key);
     // this.changedKeyData.next(key);
   }
@@ -55,7 +51,7 @@ export class LayoutStorageService {
     return this.storage[key];
   }
 
-  private updateKey(key: string): void {
+  private updateKey(key: IKeyData): void {
     this.changedKeyDataSignal.set(key);
   }
 

@@ -2,16 +2,18 @@ import { Subject } from "rxjs";
 import { IEffect, IEffectComponent } from "../interfaces/effect.interface";
 import { EffectBaseComponet } from "../lib/effect-component.base";
 import { AbstractControl } from "@angular/forms";
+import { LayoutStorageService } from "../service/layout-storage/layout-storage.service";
+import { LayoutCoreService } from "../service/layout-core/layout-core.service";
 
 export class DisableControlEffect extends EffectBaseComponet implements IEffectComponent {
 
     constructor(
         public override destroy: Subject<boolean>,
         public override effect: IEffect,
-        protected override control?: AbstractControl,
-        // protected layoutCoreService: LayoutCoreService
+        public override layoutCoreService: LayoutCoreService,
+        public override control?: AbstractControl,
     ) {
-        super(destroy, effect, control);
+        super(destroy, effect, layoutCoreService, control);
     }
 
     override init(): void {

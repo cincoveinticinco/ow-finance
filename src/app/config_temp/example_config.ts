@@ -4,6 +4,7 @@ export const ExampleLayout: ILayout = {
     title: 'Step one',
     blocks: [
         {
+            key: 'main_title',
             block_type: 'title',
             classes: 'text-lg px-2',
             config: {
@@ -12,6 +13,7 @@ export const ExampleLayout: ILayout = {
             }
         },
         {
+            key: 'personal_data_form',
             block_type: 'form',
             classes: '',
             config: {
@@ -144,52 +146,86 @@ export const ExampleLayout: ILayout = {
                 controls: [
                     {
                         name: 'personal_type',
-                        control_type: 'input',
+                        control_type: 'select',
                         classes: 'md:col-2 sm:col-12',
                         validators: [
                             {
                                 validator_type: 'required',
-                            },
-                            {
-                                validator_type: 'maxlength',
-                                params: [30]
-                            },
-                            {
-                                validator_type: 'minlength',
-                                params: [5]
                             }
                         ],
                         disabled: false,
                         config: {
-                            type: 'text',
                             label: 'Provider type',
-                            placeholder: 'Provider type',
+                            options: [
+                                {
+                                    id: 1,
+                                    name: 'Natural',
+                                },
+                                {
+                                    id: 2,
+                                    name: 'Juridica',
+                                },
+                            ],
+                            option_value: 'id',
+                            option_label: 'name',
+                            searchable: true,
+                            multiple: false,
                         },
                         value: null
                     },
                     {
+                        key: 'changelistdocumenttype',
                         name: 'document_type',
-                        control_type: 'input',
+                        control_type: 'select',
                         classes: 'md:col-2 sm:col-12',
                         validators: [
                             {
                                 validator_type: 'required',
-                            },
+                            }
+                        ],
+                        effects: [
                             {
-                                validator_type: 'maxlength',
-                                params: [20]
-                            },
-                            {
-                                validator_type: 'minlength',
-                                params: [5]
+                                effect_type: 'changelist',
+                                key: 'changelistdocumenttypeeffect',
+                                key_control: 'changelistdocumenttype',
+                                params: [
+                                    'provider_data.personal_type',
+                                    [
+                                        {
+                                            value: 1,
+                                            options: [
+                                                {
+                                                    id: 1,
+                                                    name: 'Cédula de ciudadanía'
+                                                },
+                                                {
+                                                    id: 2,
+                                                    name: 'Pasaporte'
+                                                },
+                                                {
+                                                    id: 3,
+                                                    name: 'Cédula de extranjería'
+                                                },
+                                            ]
+                                        },
+                                        {
+                                            value: 2,
+                                            options: [
+                                                {
+                                                    id: 1,
+                                                    name: 'NIT'
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                ]
                             }
                         ],
                         disabled: false,
                         config: {
-                            type: 'text',
-                            label: 'Document type',
-                            placeholder: 'Document type',
-                            helpText: 'The document type'
+                            label: 'Provider type',
+                            option_value: 'id',
+                            option_label: 'name'
                         },
                         value: null
                     },

@@ -6,6 +6,7 @@ import { IValidator, ValidatorConfig } from '../../interfaces/validator.interfac
 import { VALIDATOR_CONFIG_TOKEN } from '../../config/validator.config';
 import { EffectConfig, IEffect } from '../../interfaces/effect.interface';
 import { EFFECT_CONFIG_TOKEN } from '../../config/effect.config';
+import { LayoutCoreService } from '../layout-core/layout-core.service';
 
 @Injectable({
   providedIn: 'root',
@@ -18,7 +19,7 @@ export class FormService implements OnDestroy {
     @Inject(VALIDATOR_CONFIG_TOKEN) private VALIDATOR_CONFIG: ValidatorConfig,
     @Inject(EFFECT_CONFIG_TOKEN) private EFFECT_CONFIG: EffectConfig,
     private fb: FormBuilder,
-    // private layoutCoreService
+    private layoutCoreService: LayoutCoreService
   ) {}
 
   ngOnDestroy(): void {
@@ -72,8 +73,7 @@ export class FormService implements OnDestroy {
       if (!effectComponentClass) {
         console.warn("Effect component not found");
       }
-      const effectComponent = new effectComponentClass(this.destroy, effect, control);
-      // const effectComponent = new effectComponentClass(this.destroy, this.layoutCoreService, effect, control);
+      const effectComponent = new effectComponentClass(this.destroy, effect, this.layoutCoreService, control);
       effectComponent.execute();
     }
   }

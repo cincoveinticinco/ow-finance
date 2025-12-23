@@ -9,18 +9,20 @@ import { FormService } from '../../../../service/form/form.service';
 import { takeUntil } from 'rxjs';
 import { IControl } from '../../../../interfaces/control.interface';
 import { LayoutStorageService } from '../../../../service/layout-storage/layout-storage.service';
+import { ISelectControl } from './select-control.interface';
+import { SelectModule } from 'primeng/select';
+import { LabelBehaviorDirective } from '../../../../../../directives/label-behavior.directive';
 
 @Component({
   selector: 'app-select-control',
-  imports: [ReactiveFormsModule, Label, ErrorControl, MultiSelectModule, ],
+  imports: [ReactiveFormsModule, Label, ErrorControl, MultiSelectModule, SelectModule, LabelBehaviorDirective],
   templateUrl: './select-control.html',
   styleUrl: './select-control.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SelectControl extends ControlBlockComponentBase implements IControlComponent {
 
-  declare config: any;
-  options: any[] = [];
+  declare config: ISelectControl;
 
   constructor(
     protected override controlContainer: ControlContainer,
@@ -30,28 +32,16 @@ export class SelectControl extends ControlBlockComponentBase implements IControl
   ) {
     super(controlContainer, formService);
     effect(() => {
-      if (this.layoutStorageService.changedKeyData() === this.config.itemsKey) {
-        this.setOptions();
+      if ( !this.layoutStorageService.changedKeyData() ) return;
+      const { key, options } = this.layoutStorageService.changedKeyData()!;
+      if (key === this.control.key) {
+        this.config.options = options;
       }
     })
   }
 
   load(control: IControl): void {
       this.add(control);
-      this.setOptions();
-  }
-
-  private setOptions(): void {
-    this.options = this.layoutStorageService.getKeyData(this.config.itemsKey) || [];
-  }
-
-  private startListening(): void {
-    // this.layoutStorageService.changedKeyData.pipe(takeUntil(this.destroy))
-    //   .subscribe((key: string) => {
-    //     if (key === this.config.itemsKey) {
-    //       this.setOptions();
-    //     }
-    //   });
   }
 
 }
