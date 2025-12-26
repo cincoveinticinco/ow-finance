@@ -2,7 +2,7 @@
     <app-label labelBehavior [control]="control"></app-label>
     <input pInputText [id]="control.id" [formControlName]="control.id!" [type]="control.type!" [placeholder]="control.placeholder! || control.label" />
     <app-error-control [control]="control"></app-error-control>
-    @if (control.helpText && (formContext.valid || !formContext.dirty)) {
-        <small>{{ control.helpText }}</small>
+    @if (control.help_text && (formContext.valid || !formContext.dirty)) {
+        <small>{{ control.help_text }}</small>
     }
 </div>

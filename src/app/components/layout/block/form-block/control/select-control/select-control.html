@@ -6,8 +6,8 @@
         <p-select [formControlName]="control.id!" [options]="config.options" [optionLabel]="config.option_label" [optionValue]="config.option_value" [placeholder]="config.placeholder || config.label" [filter]="config.searchable" class="w-full md:w-56" />
     }
     <app-error-control [control]="control"></app-error-control>
-    @if (config.helpText && formContext.valid) {
-        <small id="username-help">{{ config.helpText }}</small>
+    @if (config.help_text && formContext.valid) {
+        <small id="username-help">{{ config.help_text }}</small>
     }
 </div>
 

@@ -15,7 +15,7 @@ export const ExampleLayout: ILayout = {
             config: {
                 id: 'provider_data',
                 classes: '',
-                value: '', // title value
+                value: 'Provider data', // title value
                 // form_type: 'group', // multiple | unique
             },
             blocks: [
@@ -30,12 +30,29 @@ export const ExampleLayout: ILayout = {
                 {
                     block_type: 'input',
                     config: {
-                        type: 'text',
-                        help_tex: 'test',
                         classes: 'md:col-2 sm:col-12',
                         disabled: false,
+                        help_text: 'test',
                         id: 'personal_type',
                         label: 'Provider type',
+                        type: 'text',
+                        value: null,
+                        validators: [
+                            {
+                                validator_type: 'required',
+                            }
+                        ],
+                    },
+                },
+                {
+                    block_type: 'input',
+                    config: {
+                        classes: 'md:col-2 sm:col-12',
+                        disabled: false,
+                        help_text: 'document',
+                        id: 'document_type',
+                        label: 'Document type',
+                        type: 'text',
                         value: null,
                         validators: [
                             {
@@ -54,9 +71,6 @@ export const ExampleLayout: ILayout = {
         next_text: 'Finish'
     }
 } 
-
-
-
 
 // import { ILayout } from "../components/layout/interfaces/layout.interface";
 

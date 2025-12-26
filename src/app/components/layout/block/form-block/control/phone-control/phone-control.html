@@ -35,8 +35,8 @@
         <div class="px-0" [ngClass]="{'col-9': config.show_countries, 'col-12': !config.show_countries}">
             <p-inputmask [formControlName]="control.id!" [mask]="selectedCountry?.mask || defaultMask" [placeholder]="config.placeholder || defaultMask"  />
             <app-error-control [control]="control"></app-error-control>
-            @if (config.helpText && (formContext.valid || !formContext.dirty)) {
-                <small>{{ config.helpText }}</small>
+            @if (config.help_text && (formContext.valid || !formContext.dirty)) {
+                <small>{{ config.help_text }}</small>
             }
         </div>
     </div>

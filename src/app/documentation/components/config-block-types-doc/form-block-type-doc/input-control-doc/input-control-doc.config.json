@@ -5,7 +5,7 @@
         "type": "string"
     },
     {
-        "property": "helpText",
+        "property": "help_text",
         "description": "Provides additional help text for the input field",
         "type": "string"
     },
