@@ -1,12 +1,3 @@
-@if (config.title) {
-    <app-title-block [config]="config.title"></app-title-block>
-}
-
-@if (config.parragraph) {
-    <app-text-block [config]="config.parragraph"></app-text-block>
-}
-
-
 <form [formGroup]="form">
     <div class="w-full">
         @if(form) {

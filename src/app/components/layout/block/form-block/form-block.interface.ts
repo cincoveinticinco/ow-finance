@@ -6,7 +6,5 @@ export interface IFormBlock {
     name: string,
     form_type: string;
     controls: IControl[];
-    title?: ITitleBlock,
-    parragraph?: ITextBlock;
     // lazy?: string;
 }

@@ -24,16 +24,12 @@ export class ChangeListControlEffect extends EffectBaseComponet implements IEffe
         if (!targetPath || !valuesPath) return;
 
         const targetControl: AbstractControl = this.treeForm.get(targetPath) as AbstractControl;
-        console.log(targetControl)
-        // const targetControl: AbstractControl = this.layoutStorageService.get(this.treeForm.controls, targetPath) as AbstractControl;
         targetControl.valueChanges.pipe(takeUntil(this.destroy))
             .subscribe((value) => {
                 if (!valuesPath.some(({value: v}) => v === value)) return;
                 const options = valuesPath.find(({value: v}) => v === value).options;
                 this.layoutStorageService.setKeyData({key: this.effect.key_control!, options});
             })
-        console.log(targetControl)
-
     }
 
 }

@@ -3,7 +3,7 @@ import { IEffect } from "./effect.interface";
 import { IValidator } from "./validator.interface";
 
 export interface IControl {
-    name?: string;
+    field_id?: string;
     control_type?: string;
     form_type?: string;
     classes?: string;

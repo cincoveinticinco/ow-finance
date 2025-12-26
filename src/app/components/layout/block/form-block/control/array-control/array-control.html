@@ -1,7 +1,7 @@
 <div [formGroup]="form">
     @for (c of control.groups; track c.key; let i = $index) {
-        @if(!isNull(c.name) && !isNull(c.key)) {
-            <div [formArrayName]="c.name">
+        @if(!isNull(c.field_id) && !isNull(c.key)) {
+            <div [formArrayName]="c.field_id">
                 <div class="flex align-items-center mb-3">
                     <div class="mr-2 flex gap-2 align-items-center">
                         @if (control.add_config?.can_remove_first || i > 0) {

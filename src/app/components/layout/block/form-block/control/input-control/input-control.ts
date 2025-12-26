@@ -29,7 +29,7 @@ export class InputControl extends ControlBlockComponentBase implements IControlC
   }
 
   load(control: IControl): void {
-      this.add(control);
+    this.add(control);
   }
 
 }

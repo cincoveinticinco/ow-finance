@@ -51,7 +51,6 @@ export class LayoutCoreService {
   }
 
   getForm(): FormGroup {
-    console.log(this.form)
     return this.form;
   }
 

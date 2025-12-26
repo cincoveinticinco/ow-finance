@@ -13,15 +13,35 @@ export const ExampleLayout: ILayout = {
             }
         },
         {
-            key: 'personal_data_form',
-            block_type: 'form',
+            key: 'full_name_input',
+            block_type: 'input',
             classes: '',
             config: {
-                name: 'personal_data',
+                field_id: 'full_name',
+                validators: [
+                    {
+                        validator_type: 'required',
+                    }
+                ],
+                disabled: false,
+                config: {
+                    type: 'text',
+                    label: 'Full name',
+                    placeholder: 'test',
+                },
+                value: null
+            }
+        },
+        {
+            key: 'personal_data_form',
+            block_type: 'section',
+            classes: '',
+            config: {
+                field_id: 'personal_data',
                 form_type: 'group',
                 controls: [
                     {
-                        name: 'full_name',
+                        field_id: 'full_name',
                         control_type: 'input',
                         classes: 'md:col-4 sm:col-12',
                         validators: [
@@ -46,9 +66,17 @@ export const ExampleLayout: ILayout = {
                         value: null
                     },
                     {
-                        name: 'age',
+                        control_type: 'title',
+                        classes: 'md:col-12 sm:col-12 text-lg',
+                        config: {
+                            value: 'Test title',
+                            has_separator: true
+                        },
+                    },
+                    {
+                        field_id: 'age',
                         control_type: 'input',
-                        classes: 'md:col-4 sm:col-12',
+                        classes: 'md:col-6 sm:col-12',
                         validators: [
                             {
                                 validator_type: 'required',
@@ -74,57 +102,25 @@ export const ExampleLayout: ILayout = {
                         value: null
                     },
                     {
-                        name: 'phone',
-                        control_type: 'input',
-                        classes: 'md:col-4 sm:col-12',
+                        field_id: 'phone',
+                        control_type: 'phone',
+                        classes: 'md:col-6 sm:col-12',
                         validators: [
                             {
                                 validator_type: 'required',
-                            },
-                            {
-                                validator_type: 'maxlength',
-                                params: [10]
-                            },
-                            {
-                                validator_type: 'minlength',
-                                params: [7]
                             }
                         ],
                         disabled: false,
                         config: {
-                            type: 'number',
                             label: 'Phone',
                             placeholder: 'Phone',
-                            helpText: 'This is your phone number'
+                            helpText: 'This is your phone number',
+                            show_countries: true,
+                            default_country: 'CO'
                         },
                         value: null
                     },
-                    // {
-                    //     name: 'person_type',
-                    //     type: 'select',
-                    //     classes: 'w-3',
-                    //     validators: [{
-                    //         validator_type: 'required',
-                    //     }],
-                    //     disabled: false,
-                    //     config: {
-                    //         label: 'Person type',
-                    //         placeholder: 'Person',
-                    //         helpText: 'This is select field',
-                    //         itemsKey: 'person_types',
-                    //         optionLabel: 'name',
-                    //         optionValue: 'value'
-                    //     },
-                    //     value: 'Test'
-                    // }
                 ],
-                // title: {
-                //     value: 'Personal information',
-                //     has_separator: true
-                // },
-                // parragraph: {
-                //     value: 'xxxxsssss'
-                // },
             }
         },
         {
@@ -138,14 +134,14 @@ export const ExampleLayout: ILayout = {
         },
         {
             key: 'provider_data',
-            block_type: 'form',
+            block_type: 'section',
             classes: '',
             config: {
-                name: 'provider_data',
+                field_id: 'provider_data',
                 form_type: 'group',
                 controls: [
                     {
-                        name: 'personal_type',
+                        field_id: 'personal_type',
                         control_type: 'select',
                         classes: 'md:col-2 sm:col-12',
                         validators: [
@@ -175,7 +171,7 @@ export const ExampleLayout: ILayout = {
                     },
                     {
                         key: 'changelistdocumenttype',
-                        name: 'document_type',
+                        field_id: 'document_type',
                         control_type: 'select',
                         classes: 'md:col-2 sm:col-12',
                         validators: [
@@ -230,7 +226,7 @@ export const ExampleLayout: ILayout = {
                         value: null
                     },
                     {
-                        name: 'document_number',
+                        field_id: 'document_number',
                         control_type: 'input',
                         classes: 'md:col-2 sm:col-12',
                         validators: [
@@ -248,7 +244,7 @@ export const ExampleLayout: ILayout = {
                         value: null
                     },
                     {
-                        name: 'provider_name',
+                        field_id: 'provider_name',
                         control_type: 'input',
                         classes: 'md:col-6 sm:col-12',
                         validators: [
@@ -266,7 +262,7 @@ export const ExampleLayout: ILayout = {
                         value: null
                     },
                     {
-                        name: 'email',
+                        field_id: 'email',
                         control_type: 'input',
                         classes: 'md:col-6 sm:col-12',
                         validators: [
@@ -289,7 +285,7 @@ export const ExampleLayout: ILayout = {
                         value: null
                     },
                     {
-                        name: 'company_phone',
+                        field_id: 'company_phone',
                         control_type: 'input',
                         classes: 'md:col-2 sm:col-12',
                         validators: [
@@ -315,7 +311,7 @@ export const ExampleLayout: ILayout = {
                         value: null
                     },
                     {
-                        name: 'contact_person',
+                        field_id: 'contact_person',
                         control_type: 'input',
                         classes: 'md:col-4 sm:col-12',
                         validators: [
@@ -332,7 +328,7 @@ export const ExampleLayout: ILayout = {
                         value: null
                     },
                     {
-                        name: 'company_country',
+                        field_id: 'company_country',
                         control_type: 'input',
                         classes: 'md:col-2 sm:col-12',
                         validators: [
@@ -349,7 +345,7 @@ export const ExampleLayout: ILayout = {
                         value: null
                     },
                     {
-                        name: 'company_city',
+                        field_id: 'company_city',
                         control_type: 'input',
                         classes: 'md:col-2 sm:col-12',
                         validators: [
@@ -366,7 +362,7 @@ export const ExampleLayout: ILayout = {
                         value: null
                     },
                     {
-                        name: 'company_address',
+                        field_id: 'company_address',
                         control_type: 'input',
                         classes: 'md:col-4 sm:col-12',
                         validators: [
@@ -383,7 +379,7 @@ export const ExampleLayout: ILayout = {
                         value: null
                     },
                     {
-                        name: 'company_place',
+                        field_id: 'company_place',
                         control_type: 'input',
                         classes: 'md:col-2 sm:col-12',
                         validators: [
@@ -400,7 +396,7 @@ export const ExampleLayout: ILayout = {
                         value: null
                     },
                     {
-                        name: 'company_zip_code',
+                        field_id: 'company_zip_code',
                         control_type: 'input',
                         classes: 'md:col-2 sm:col-12',
                         validators: [
@@ -449,14 +445,14 @@ export const ExampleLayout: ILayout = {
         },
         {
             key: 'main_form',
-            block_type: 'form',
+            block_type: 'section',
             classes: 'py-0 col-12',
             config: {
-                name: 'main_contact_data',
+                field_id: 'main_contact_data',
                 form_type: 'group',
                 controls: [
                     {
-                        name: 'main_name',
+                        field_id: 'main_name',
                         control_type: 'input',
                         classes: 'sm:col-12 md:col-4',
                         validators: [
@@ -473,7 +469,7 @@ export const ExampleLayout: ILayout = {
                         value: null
                     },
                     {
-                        name: 'main_document_number',
+                        field_id: 'main_document_number',
                         control_type: 'input',
                         classes: 'sm:col-12 md:col-4',
                         validators: [
@@ -490,7 +486,7 @@ export const ExampleLayout: ILayout = {
                         value: null
                     },
                     {
-                        name: 'main_born_country',
+                        field_id: 'main_born_country',
                         control_type: 'input',
                         classes: 'sm:col-12 md:col-4',
                         validators: [
@@ -507,7 +503,7 @@ export const ExampleLayout: ILayout = {
                         value: null
                     },
                     {
-                        name: 'main_phone',
+                        field_id: 'main_phone',
                         control_type: 'input',
                         classes: 'sm:col-12 md:col-4',
                         validators: [
@@ -524,7 +520,7 @@ export const ExampleLayout: ILayout = {
                         value: null
                     },
                     {
-                        name: 'main_charge',
+                        field_id: 'main_charge',
                         control_type: 'input',
                         classes: 'sm:col-12 md:col-4',
                         validators: [
@@ -541,7 +537,7 @@ export const ExampleLayout: ILayout = {
                         value: null
                     },
                     {
-                        name: 'main_email',
+                        field_id: 'main_email',
                         control_type: 'input',
                         classes: 'sm:col-12 md:col-4',
                         validators: [
@@ -573,7 +569,7 @@ export const ExampleLayout: ILayout = {
             block_type: 'array',
             classes: 'py-0 col-12',
             config: {
-                name: 'substitutes_data',
+                field_id: 'substitutes_data',
                 form_type: 'array',
                 control_type: 'array',
                 groups: [
@@ -582,7 +578,7 @@ export const ExampleLayout: ILayout = {
                         config: {
                             controls: [
                                 {
-                                    name: 'investor_name',
+                                    field_id: 'investor_name',
                                     control_type: 'input',
                                     classes: 'col-6',
                                     validators: [
@@ -599,7 +595,7 @@ export const ExampleLayout: ILayout = {
                                     value: null
                                 },
                                 {
-                                    name: 'investor_phone',
+                                    field_id: 'investor_phone',
                                     control_type: 'input',
                                     classes: 'col-6',
                                     validators: [
@@ -616,7 +612,7 @@ export const ExampleLayout: ILayout = {
                                     value: null
                                 },
                                 {
-                                    name: 'investor_age',
+                                    field_id: 'investor_age',
                                     control_type: 'input',
                                     classes: 'col-6 mt-2',
                                     validators: [
@@ -659,7 +655,7 @@ export const ExampleLayout: ILayout = {
             block_type: 'array',
             classes: '',
             config: {
-                name: 'investors_data',
+                field_id: 'investors_data',
                 form_type: 'array',
                 control_type: 'array',
                 groups: [

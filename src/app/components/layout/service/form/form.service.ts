@@ -43,7 +43,7 @@ export class FormService implements OnDestroy {
     }
       
     if (form.constructor.name == FormGroup.name) {
-      (form as FormGroup).addControl(control.name!, abstractControl);
+      (form as FormGroup).addControl(control.field_id!, abstractControl);
     } else {
       (form as FormArray).push(abstractControl);
     }
