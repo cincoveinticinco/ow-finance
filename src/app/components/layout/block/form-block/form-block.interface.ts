@@ -5,6 +5,6 @@ import { ITitleBlock } from "../title-block/title.interface";
 export interface IFormBlock {
     name: string,
     form_type: string;
-    controls: IControl[];
+    fields: IControl[];
     // lazy?: string;
 }

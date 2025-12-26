@@ -1,4 +1,5 @@
 @if (load) {
+    <h1 class="text-5xl font-medium text-center text-primary my-4">{{ layout.title }}</h1>
     <form novalidate [formGroup]="form" class="core-layout">
         <div class="row">
             @for(block of layout.blocks; track block.key) {

@@ -40,7 +40,14 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 :root {
-  --primary: #ad60e9;
+  --primary-color: #ad60e9;
+  --p-primary-color: #ad60e9;
+}
+
+:root {
+  --p-primary-color: #ad60e9 !important;
+  --p-primary-contrast-color: #ffffff !important;
+  --p-highlight-bg: #ad60e9 !important;
   --invalid: #f44336;
 }
 
