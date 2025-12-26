@@ -1,11 +1,11 @@
 <div [formGroup]="form">
-    @for (c of control.groups; track c.key; let i = $index) {
-        @if(!isNull(c.field_id) && !isNull(c.key)) {
-            <div [formArrayName]="c.field_id">
+    @for (c of control.groups; track i; let i = $index) {
+        @if(!isNull(c.id)) {
+            <div [formArrayName]="c.id">
                 <div class="flex align-items-center mb-3">
                     <div class="mr-2 flex gap-2 align-items-center">
                         @if (control.add_config?.can_remove_first || i > 0) {
-                            <i class="pi pi-trash invalid cursor-pointer" (click)="deleteControl(c.key)"></i>
+                            <i class="pi pi-trash invalid cursor-pointer" (click)="deleteControl(c.id)"></i>
                         }
                         @if (control.add_config?.show_index) {
                             <p class="font-semibold text-xl">{{ i + 1 }}</p>

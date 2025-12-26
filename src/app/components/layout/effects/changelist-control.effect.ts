@@ -28,7 +28,7 @@ export class ChangeListControlEffect extends EffectBaseComponet implements IEffe
             .subscribe((value) => {
                 if (!valuesPath.some(({value: v}) => v === value)) return;
                 const options = valuesPath.find(({value: v}) => v === value).options;
-                this.layoutStorageService.setKeyData({key: this.effect.key_control!, options});
+                this.layoutStorageService.setKeyData({id: this.effect.id_control!, options});
             })
     }
 

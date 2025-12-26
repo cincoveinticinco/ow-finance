@@ -4,7 +4,7 @@ import { IBaseControl } from "./base-control.interface";
 
 export interface IControlComponent {
     control: IControl;
-    config: any;
+    // config: any;
     load(control: IControl): void;
 }
 

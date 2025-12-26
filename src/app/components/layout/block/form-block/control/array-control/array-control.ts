@@ -47,27 +47,25 @@ export class ArrayControl extends ControlBlockComponentBase implements IControlC
     if (controls.length === this.control.add_config?.limit) {
       throw {code: 'limit-was-reach-out', message: "Limit was reach out"}
     }
-    if (!lastControl.key && !lastControl.field_id) {
-      lastControl.key = 0;
-      lastControl.field_id = '0';
+    if (!lastControl.id) {
+      lastControl.id = '0';
       this.add(lastControl);
       this.cdr.detectChanges();
       return;
     }
-    const newControl = {...lastControl, key: +lastControl.key! + 1, name: `${+lastControl.key! + 1}`, value: null}
+    const newControl = {...lastControl, id: `${+lastControl.id! + 1}`, value: null}
     this.add(newControl);
     controls.push(newControl);
   }
 
-  protected deleteControl(key: string | number) {
+  protected deleteControl(id: string | number) {
     const controls = this.control?.['groups'];
     if (controls.length === 1) {
       const lastControl = controls[controls.length - 1];
-      lastControl.key = undefined;
-      lastControl.field_id = undefined;
+      lastControl.id = undefined;
       return;
     }
-    const controlIndex = controls.findIndex((c: IControl) => c.key === key);
+    const controlIndex = controls.findIndex((c: IControl) => c.id === id);
     controls.splice(controlIndex, 1);
   }
 

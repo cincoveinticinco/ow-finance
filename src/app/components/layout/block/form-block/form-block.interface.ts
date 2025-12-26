@@ -3,8 +3,9 @@ import { ITextBlock } from "../text-block/text-block.interface";
 import { ITitleBlock } from "../title-block/title.interface";
 
 export interface IFormBlock {
-    name: string,
-    form_type: string;
-    fields: IControl[];
+    id: string,
+    classes?: string,
+    value?: string,
+    // form_type: string;
     // lazy?: string;
 }

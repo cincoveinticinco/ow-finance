@@ -1,6 +1,6 @@
-<div [formGroup]="formContext" class="formgrid grid" id="{{control.field_id}}">
-    @for(control of config.controls; track control.field_id) {
-        <div id="{{control?.idName || control.field_id}}" class="{{control?.classes || 'col-12 py-2'}}">
+<div [formGroup]="formContext" class="formgrid grid" [id]="control.id">
+    @for(control of config.controls; track i; let i = $index) {
+        <div [id]="i" class="{{control?.classes || 'col-12 py-2'}}">
             <app-control-block [control]="control"></app-control-block>
         </div>
     }

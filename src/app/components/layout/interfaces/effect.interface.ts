@@ -6,7 +6,7 @@ export type EffectParam = number | string | number[] | string[] | boolean;
 export interface IEffect {
     effect_type?: string,
     key?: string,
-    key_control?: string,
+    id_control?: string,
     params?: EffectParam[];
 }
 

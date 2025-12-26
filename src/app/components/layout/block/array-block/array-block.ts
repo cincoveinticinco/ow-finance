@@ -28,7 +28,7 @@ export class ArrayBlock extends BlockComponentBase<IArrayBlock> implements OnIni
   load(block: IBlock): void {
     this.add(block);
     this.parentForm = this.controlContainer.control as FormGroup;
-    this.addChildForm();
+    this.addChildForm('array');
   }
 
 }

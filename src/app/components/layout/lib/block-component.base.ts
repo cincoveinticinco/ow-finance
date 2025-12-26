@@ -30,8 +30,8 @@ export abstract class BlockComponentBase<TConfig> implements OnDestroy {
     }
 
 
-    addChildForm(): void {
-        this.form = this.formService.addControl(this.parentForm, this.config as IControl) as FormGroup;
+    addChildForm(form_type: string): void {
+        this.form = this.formService.addControl(this.parentForm, this.config as IControl, form_type) as FormGroup;
     }
 
 }

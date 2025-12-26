@@ -1,9 +1,10 @@
 <form [formGroup]="form">
     <div class="formgrid grid">
         @if(ready) {
-            @for(control of config.fields; track control.field_id) {
-                <div id="{{control?.idName || control.field_id}}" class="{{control?.classes || 'col-12 py-2'}}">
-                    <app-control-block [control]="control"></app-control-block>
+            @for(block of block.blocks; track block.id) {
+                <div id="{{block.id}}" class="{{config.classes || 'col-12 py-2'}}">
+                    <!-- <app-control-block [control]="control"></app-control-block> -->
+                     <app-block [block]="block"></app-block>
                 </div>
             }
             <!-- <app-form-control [control]="config.controls!"></app-form-control> -->

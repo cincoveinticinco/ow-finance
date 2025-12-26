@@ -18,7 +18,7 @@ import { IInputControl } from './input-control.interface';
 })
 export class InputControl extends ControlBlockComponentBase implements IControlComponent {
 
-  declare config: IInputControl;
+  declare control: IInputControl;
 
   constructor(
     protected override controlContainer: ControlContainer,

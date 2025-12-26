@@ -27,10 +27,10 @@ export class FormService implements OnDestroy {
       this.destroy.unsubscribe;
   }
 
-  public addControl(form: FormGroup | FormArray, control: IControl): AbstractControl {
+  public addControl(form: FormGroup | FormArray, control: IControl, form_type?: string): AbstractControl {
     const validators = this.createValidator(control.validators!);
     let abstractControl: AbstractControl;
-    switch(control.form_type) {
+    switch(form_type) {
       case "group":
         abstractControl = this.fb.group({}, {validators})
         break;
@@ -43,7 +43,7 @@ export class FormService implements OnDestroy {
     }
       
     if (form.constructor.name == FormGroup.name) {
-      (form as FormGroup).addControl(control.field_id!, abstractControl);
+      (form as FormGroup).addControl(control.id!, abstractControl);
     } else {
       (form as FormArray).push(abstractControl);
     }

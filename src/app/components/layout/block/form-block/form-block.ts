@@ -5,10 +5,11 @@ import { IFormBlock } from './form-block.interface';
 import { IBlockComponent } from '../../interfaces/block-component.interface';
 import { BlockComponentBase } from '../../lib/block-component.base';
 import { ControlBlock } from './control/control-block/control-block';
+import { Block } from '../../lib/block/block';
 
 @Component({
   selector: 'app-form-block',
-  imports: [ReactiveFormsModule, ControlBlock],
+  imports: [ReactiveFormsModule, Block],
   templateUrl: './form-block.html',
   styleUrl: './form-block.scss',
 })
@@ -30,7 +31,7 @@ export class FormBlock extends BlockComponentBase<IFormBlock> implements OnInit,
   load(block: IBlock): void {
     this.add(block);
     this.parentForm = this.controlContainer.control as FormGroup;
-    this.addChildForm();
+    this.addChildForm('group');
     // if (!this.config.lazy) return;
     this.ready = false;
     // this.loadForm();

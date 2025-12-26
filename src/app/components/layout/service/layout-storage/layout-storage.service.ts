@@ -2,7 +2,7 @@ import { Injectable, signal } from '@angular/core';
 import { Subject } from 'rxjs';
 import { cloneDeep, get, set } from 'lodash'
 
-export interface IKeyData {key: string, options: any[]}
+export interface IKeyData {id: string, options: any[]}
 
 @Injectable({
   providedIn: 'root',

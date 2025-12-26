@@ -33,8 +33,8 @@ export class SelectControl extends ControlBlockComponentBase implements IControl
     super(controlContainer, formService);
     effect(() => {
       if ( !this.layoutStorageService.changedKeyData() ) return;
-      const { key, options } = this.layoutStorageService.changedKeyData()!;
-      if (key === this.control.key) {
+      const { id, options } = this.layoutStorageService.changedKeyData()!;
+      if (id === this.control.id) {
         this.config.options = options;
       }
     })

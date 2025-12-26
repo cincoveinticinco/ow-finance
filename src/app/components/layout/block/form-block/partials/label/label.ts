@@ -9,7 +9,6 @@ import { ILabel } from './label.interface';
 })
 export class Label {
 
-  @Input() config?: ILabel;
-  @Input() control: any;
+  @Input() control!: ILabel;
 
 }

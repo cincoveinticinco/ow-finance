@@ -25,7 +25,7 @@ export class ErrorControl implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    this.ref = (this.controlContainer.control as FormGroup).controls[this.control.field_id!];
+    this.ref = (this.controlContainer.control as FormGroup).controls[this.control.id!];
     this.listeningErrors();
   }
 

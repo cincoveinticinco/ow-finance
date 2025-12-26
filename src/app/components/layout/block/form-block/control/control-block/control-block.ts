@@ -5,6 +5,7 @@ import { LoadBlockDirective } from '../../../../directive/load-block.directive';
 import { CONTROL_CONFIG_TOKEN } from '../../../../config/control.config';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { IBlock } from '../../../../interfaces/block.interface';
 
 @Component({
   selector: 'app-control-block',
@@ -15,6 +16,7 @@ import { CommonModule } from '@angular/common';
 export class ControlBlock {
 
   @Input() control!: IControl;
+  @Input() block!: IBlock;
   @ViewChild(LoadBlockDirective, {static: true}) loadBlock!: LoadBlockDirective;
 
   instance!: IControlComponent;
@@ -29,7 +31,7 @@ export class ControlBlock {
   }
 
   private getControlBlockClass(): Type<IControlComponent> {
-    const componentClass = this.CONTROL_CONFIG[this.control.control_type!];
+    const componentClass = this.CONTROL_CONFIG[this.block.block_type!];
     if (!componentClass) {
       throw {code: 'control-component-not-found', message: "Control component class not found"}
     }
@@ -52,7 +54,7 @@ export class ControlBlock {
 
     /* Save instance of component */
     this.instance = <IControlComponent>componentRef.instance;
-    this.instance.load(this.control);
+    this.instance.load(this.block.config);
   }
 
 }

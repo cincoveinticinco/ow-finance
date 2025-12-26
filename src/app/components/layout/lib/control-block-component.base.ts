@@ -9,7 +9,6 @@ import { IControlConfig } from "../interfaces/control-component.interface";
 export abstract class ControlBlockComponentBase implements OnDestroy {
     @Input() control!: IControl;
 
-    config!: IControlConfig;
     form!: FormGroup;
     formContext!: AbstractControl;
     isGroup!: boolean;
@@ -30,7 +29,6 @@ export abstract class ControlBlockComponentBase implements OnDestroy {
 
     protected setConfig(control: IControl): void {
         this.control = control;
-        this.config = control.config!;
     }
 
     add(control: IControl): void {
@@ -39,9 +37,6 @@ export abstract class ControlBlockComponentBase implements OnDestroy {
         // this.form = this.controlContainer.control as FormArray;
         this.formContext = this.formService.addControl(this.form, control);
         this.isGroup = this.controlContainer.control!.constructor.name == FormGroup.name;
-        if (this.config?.actionSubscribe) {
-            // call listen readonly
-        }
     }
 
 }

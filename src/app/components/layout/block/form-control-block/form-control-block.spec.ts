@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TitleControl } from './title-control';
+import { FormControlBlock } from './form-control-block';
 
-describe('TitleControl', () => {
-  let component: TitleControl;
-  let fixture: ComponentFixture<TitleControl>;
+describe('FormControlBlock', () => {
+  let component: FormControlBlock;
+  let fixture: ComponentFixture<FormControlBlock>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TitleControl]
+      imports: [FormControlBlock]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(TitleControl);
+    fixture = TestBed.createComponent(FormControlBlock);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
